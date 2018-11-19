@@ -45,6 +45,10 @@ typings/
 # Optional eslint cache
 .eslintcache
 
+#configs
+.vscode/
+.prettierrc
+
 # Optional REPL history
 .node_repl_history
 
