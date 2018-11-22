@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const logger = require('morgan');
 
-console.log('welcome to entry.js');
+console.log('welcome to server.js');
 const app = express();
 
 app.use(logger('dev'));
