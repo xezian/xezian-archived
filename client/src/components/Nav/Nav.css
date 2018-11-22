@@ -1,0 +1,16 @@
+.nav-opts {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-content: flex-start;
+  flex-wrap: wrap;
+  width: 35vw;
+  height: 100px;
+}
+.nav-opts a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #4567ef;
+  height: 20px;
+  line-height: 20px;
+}
