@@ -1,16 +1,19 @@
 .nav-opts {
   display: flex;
   flex-direction: row-reverse;
-  justify-content: space-around;
-  align-content: flex-start;
   flex-wrap: wrap;
-  width: 35vw;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100vw;
   height: 100px;
 }
-.nav-opts a {
+.nav-item h4, a {
+  position: relative;
   text-decoration: none;
   text-transform: uppercase;
   color: #4567ef;
-  height: 20px;
-  line-height: 20px;
+  top: 0;
+  line-height: 0px;
+  height: 0px;
+  padding: 0px 3px 0px 3px;
 }

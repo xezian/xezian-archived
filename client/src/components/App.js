@@ -9,16 +9,16 @@ export default class App extends Component {
   render() {
     return (
       <Router>
-        <div className="App">
+        <div>
           <header className="App-header">
-            <Logo />
+            <Logo flex="row" />
             <Nav />
           </header>
           <div className="App-main">
             <Body />
           </div>
           <footer className="App-footer">
-            <Logo />
+            <Logo flex="row-reverse" />
           </footer>
         </div>
       </Router>
