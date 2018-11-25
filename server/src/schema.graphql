@@ -1,0 +1,12 @@
+# import * from './generated/prisma.graphql'
+type SuccessMessage {
+  message: String
+}
+
+type Mutation {
+    emailMe(email: String, subject: String, body: String): SuccessMessage
+}
+
+type Query {
+    projects: [Project]!
+}
