@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
-import './Contact.css';
+import ContactStyles from './ContactStyles';
 
 const EMAIL_MUTATION = gql`
   mutation EMAIL_MUTATION($email: String!, $subject: String, $body: String!) {
@@ -24,7 +24,7 @@ export default class Contact extends Component {
   };
   render() {
     return (
-      <div className="outerland">
+      <ContactStyles>
         <Mutation mutation={EMAIL_MUTATION} variables={this.state}>
           {(emailMe, { error, loading }) => {
             return (
@@ -77,7 +77,7 @@ export default class Contact extends Component {
             );
           }}
         </Mutation>
-      </div>
+      </ContactStyles>
     );
   }
 }
