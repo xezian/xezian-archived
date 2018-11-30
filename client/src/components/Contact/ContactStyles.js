@@ -2,41 +2,45 @@ import styled from 'styled-components';
 
 const ContactStyles = styled.div`
   width: 100vw;
-  height: 100vh;
+  height: 120vh;
   display: inline-block;
-  background-color: #12afec;
-  border-bottom: 1px solid #1e305c;
+  padding-top: 10vh;
+  background-color: ${props => props.theme.mainBackground};
+  border-bottom: 1px solid ${props => props.theme.headerFooter};
   .innerland {
     margin: 0 auto;
     margin-top: 1rem;
     display: flex;
-    height: 80vh;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-color: #4567ef;
+    background-color: ${props => props.theme.innerBackground};
     text-transform: uppercase;
-    border: 1px solid #1e305c;
-    color: #1e305c;
+    border: 1px solid ${props => props.theme.headerFooter};
+    color: ${props => props.theme.textOne};
     width: 50vw;
     label {
       display: block;
       margin-bottom: 1rem;
+    }
+    textarea {
+      resize: vertical;
+      height: 40vh;
     }
     input,
     textarea,
     select {
       width: 70vw;
       padding: 0.5rem;
-      font-size: 1rem;
-      color: #1e305c;
-      background-color: #ffeebb;
-      border: 1px solid #1e305c;
+      font-size: 1.3rem;
+      color: ${props => props.theme.textOne};
+      background-color: ${props => props.theme.formField};
+      border: 1px solid ${props => props.theme.headerFooter};
     }
     input::placeholder,
     textarea::placeholder,
     select::placeholder {
-      color: #12aeeccf;
+      color: ${props => props.theme.textThree};
       font-family: cursive;
     }
     button,
@@ -47,20 +51,20 @@ const ContactStyles = styled.div`
       height: 41px;
       line-height: 41px;
       border-radius: 1rem;
-      background-color: #12afec;
-      border: 1px solid #1e305c;
+      background-color: ${props => props.theme.mainBackground};
+      border: 1px solid ${props => props.theme.headerFooter};
       font-size: 2rem;
       font-weight: 600;
     }
     button:hover,
     input[type='submit'] {
-      background-color: #12afec;
-      border: 1px solid #ffeebb;
+      background-color: ${props => props.theme.mainBackground};
+      border: 1px solid ${props => props.theme.formField};
     }
     button:active,
     input[type='submit'] {
-      background-color: #1e305c;
-      border: 1px solid #12afec;
+      background-color: ${props => props.theme.headerFooter};
+      border: 1px solid ${props => props.theme.mainBackground};
     }
     button:focus,
     input:focus,

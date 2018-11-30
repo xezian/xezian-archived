@@ -5,7 +5,6 @@ import { ApolloClient, ApolloLink } from 'apollo-boost';
 import { createHttpLink } from 'apollo-link-http';
 import { InMemoryCache } from 'apollo-cache-inmemory';
 import { onError } from 'apollo-link-error';
-import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
@@ -28,7 +27,5 @@ ReactDOM.render(
   </ApolloProvider>,
   document.getElementById('root')
 );
-// If you want your app to work offline and load faster, you can change
-// unregister() to register() below. Note this comes with some pitfalls.
-// Learn more about service workers: http://bit.ly/CRA-PWA
+
 serviceWorker.unregister();
