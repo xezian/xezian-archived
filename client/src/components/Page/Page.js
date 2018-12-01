@@ -3,17 +3,18 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import PageStyles from './PageStyles';
 import Logo from '../Logo/Logo';
+import Buttons from '../Buttons/Buttons';
 import Nav from '../Nav/Nav';
 import Body from '../Body/Body';
 
 const lightTheme = {
-  headerFooter: '#1e305c',
-  mainBackground: '#1e3939',
-  innerBackground: '#3A3A3A',
+  headerFooter: '#DABAEA',
+  mainBackground: '#a9e9e9',
+  innerBackground: '#4567ef',
   formField: '#E1E1E1',
-  textOne: '#DABAEA',
-  textTwo: '#AFEEFA',
-  textThree: '1000px',
+  textOne: '#1e305c',
+  textTwo: '#02001c',
+  textThree: '000555'
 };
 
 const darkTheme = {
@@ -23,7 +24,7 @@ const darkTheme = {
   formField: '#22405c',
   textOne: '#DABAEA',
   textTwo: '#4567ef',
-  textThree: '#e2e2e2',
+  textThree: '#e2e2e2'
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -49,37 +50,37 @@ const GlobalStyle = createGlobalStyle`
 
 export default class Page extends Component {
   state = {
-    theme: darkTheme
+    theme: darkTheme,
+    themeName: 'dark'
   };
-  switchTheme = (theme) => {
+  switchTheme = theme => {
     switch (theme) {
       case 'dark':
-        this.setState({theme:darkTheme});
+        this.setState({ theme: darkTheme, themeName: 'dark' });
         break;
       case 'light':
-        this.setState({theme:lightTheme});
+        this.setState({ theme: lightTheme, themeName: 'light' });
         break;
       default:
-       return null;        
-    };
+        return null;
+    }
   };
   render() {
-    const { theme } = this.state;
+    const { theme, themeName } = this.state;
     return (
-      <ThemeProvider theme={theme}> 
+      <ThemeProvider theme={theme}>
         <Router>
           <PageStyles>
-          <GlobalStyle />
+            <GlobalStyle />
             <header className="App-header">
               <Logo flex="row" />
-              <Nav 
-                switchTheme={this.switchTheme}
-              />
+              <Nav />
             </header>
             <div className="App-main">
               <Body />
             </div>
             <footer className="App-footer">
+              <Buttons themeName={themeName} switchTheme={this.switchTheme} />
               <Logo flex="row-reverse" />
             </footer>
           </PageStyles>
