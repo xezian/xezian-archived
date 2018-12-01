@@ -11,6 +11,7 @@ export default class Nav extends Component {
         {({ data: { me } }) => (
           <NavStyles>
             <div className="nav-opts">
+              <div className="shim" />
               <Link className="nav-item" to="/">
                 <h4>Home</h4>
               </Link>
@@ -22,10 +23,10 @@ export default class Nav extends Component {
               </Link>
               {me && (
                 <>
-                  <Signout />
                   <Link className="nav-item" to="/admin">
                     <h4>Admin</h4>
                   </Link>
+                  <Signout />
                 </>
               )}
             </div>
