@@ -6,9 +6,13 @@ type User {
 type Project {
   id: ID! @unique
   title: String!
-  link: String!
   description: String!
-  img: String!
+  link: String!
+  repo: String
+  img: String
+  image: String
   img2: String
+  image2: String
   img3: String
+  image3: String
 }

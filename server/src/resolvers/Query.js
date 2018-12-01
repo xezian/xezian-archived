@@ -1,4 +1,8 @@
+const { forwardTo } = require('prisma-binding');
+
 const Query = {
+  projects: forwardTo('db'),
+  project: forwardTo('db'),
   me(parent, args, ctx, info) {
     // check if there is a current userid
     if (!ctx.request.userId) {

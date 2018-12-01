@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Redirect } from 'react-router-dom';
 import { Mutation } from 'react-apollo';
 import gql from 'graphql-tag';
 import ContactStyles from './ContactStyles';
@@ -23,6 +22,8 @@ export default class Contact extends Component {
     this.setState({ [name]: value });
   };
   render() {
+    const { email, subject, body } = this.state;
+    const isEnabled = email.length > 0 && body.length > 0;
     return (
       <ContactStyles>
         <Mutation mutation={EMAIL_MUTATION} variables={this.state}>
@@ -33,7 +34,7 @@ export default class Contact extends Component {
                 onSubmit={async e => {
                   e.preventDefault();
                   await emailMe();
-                  return <Redirect to="/thainq" />;
+                  this.props.history.push('/thainq');
                 }}
               >
                 <fieldset className="innerland">
@@ -43,7 +44,7 @@ export default class Contact extends Component {
                       type="email"
                       name="email"
                       placeholder="your email addy"
-                      value={this.state.email}
+                      value={email}
                       onChange={this.saveToState}
                     />
                   </label>
@@ -53,7 +54,7 @@ export default class Contact extends Component {
                       name="subject"
                       autoComplete="off"
                       placeholder="optional subject field"
-                      value={this.state.subject}
+                      value={subject}
                       onChange={this.saveToState}
                     />
                   </label>
@@ -63,11 +64,11 @@ export default class Contact extends Component {
                       type="text/html"
                       name="body"
                       placeholder="your message to me..."
-                      value={this.state.body}
+                      value={body}
                       onChange={this.saveToState}
                     />
                   </label>
-                  <button type="submit">
+                  <button disabled={!isEnabled} type="submit">
                     <span role="img" aria-label="email-icon">
                       📧
                     </span>

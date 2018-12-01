@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Mutation } from 'react-apollo';
 import { SIGNOUT_MUTATION } from './gql';
 import { CURRENT_USER_QUERY } from './gql';

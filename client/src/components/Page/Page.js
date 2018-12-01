@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import PageStyles from './PageStyles';
 import Logo from '../Logo/Logo';
@@ -48,7 +47,7 @@ const GlobalStyle = createGlobalStyle`
     }
 `;
 
-export default class Page extends Component {
+class Page extends Component {
   state = {
     theme: darkTheme,
     themeName: 'dark'
@@ -69,23 +68,23 @@ export default class Page extends Component {
     const { theme, themeName } = this.state;
     return (
       <ThemeProvider theme={theme}>
-        <Router>
-          <PageStyles>
-            <GlobalStyle />
-            <header className="App-header">
-              <Logo flex="row" />
-              <Nav />
-            </header>
-            <div className="App-main">
-              <Body {...this.props} />
-            </div>
-            <footer className="App-footer">
-              <Buttons themeName={themeName} switchTheme={this.switchTheme} />
-              <Logo flex="row-reverse" />
-            </footer>
-          </PageStyles>
-        </Router>
+        <PageStyles>
+          <GlobalStyle />
+          <header className="App-header">
+            <Logo flex="row" />
+            <Nav theme={theme} {...this.props} />
+          </header>
+          <div className="App-main">
+            <Body theme={theme} {...this.props} />
+          </div>
+          <footer className="App-footer">
+            <Buttons themeName={themeName} switchTheme={this.switchTheme} />
+            <Logo flex="row-reverse" />
+          </footer>
+        </PageStyles>
       </ThemeProvider>
     );
   }
 }
+
+export default Page;

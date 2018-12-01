@@ -4,6 +4,7 @@ type SuccessMessage {
 }
 
 type Mutation {
+    createProject(title: String, link: String, repo: String, description: String, img: String, image: String, img2: String, image2: String, img3: String, image3: String): Project!
     emailMe(email: String, subject: String, body: String): SuccessMessage
     signup(password: String!, name: String!): User!
     signin(name: String!, password: String!): User!
@@ -11,7 +12,8 @@ type Mutation {
 }
 
 type Query {
-    projects: [Project]!
+    projects(where: ProjectWhereInput, orderBy: ProjectOrderByInput): [Project]!
+    project(where: ProjectWhereUniqueInput!): Project
     me: User
 }
 

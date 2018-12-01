@@ -1,5 +1,5 @@
 # source: https://us1.prisma.sh/jason-a-leo-88a8a1/xezian/dev
-# timestamp: Sat Nov 24 2018 18:39:13 GMT-0700 (Mountain Standard Time)
+# timestamp: Sat Dec 01 2018 16:28:13 GMT-0700 (Mountain Standard Time)
 
 type AggregateProject {
   count: Int!
@@ -65,11 +65,15 @@ type PageInfo {
 type Project implements Node {
   id: ID!
   title: String!
-  link: String!
   description: String!
-  img: String!
+  link: String!
+  repo: String
+  img: String
+  image: String
   img2: String
+  image2: String
   img3: String
+  image3: String
 }
 
 """A connection to a list of items."""
@@ -84,11 +88,15 @@ type ProjectConnection {
 
 input ProjectCreateInput {
   title: String!
-  link: String!
   description: String!
-  img: String!
+  link: String!
+  repo: String
+  img: String
+  image: String
   img2: String
+  image2: String
   img3: String
+  image3: String
 }
 
 """An edge in a connection."""
@@ -105,16 +113,24 @@ enum ProjectOrderByInput {
   id_DESC
   title_ASC
   title_DESC
-  link_ASC
-  link_DESC
   description_ASC
   description_DESC
+  link_ASC
+  link_DESC
+  repo_ASC
+  repo_DESC
   img_ASC
   img_DESC
+  image_ASC
+  image_DESC
   img2_ASC
   img2_DESC
+  image2_ASC
+  image2_DESC
   img3_ASC
   img3_DESC
+  image3_ASC
+  image3_DESC
   updatedAt_ASC
   updatedAt_DESC
   createdAt_ASC
@@ -124,11 +140,15 @@ enum ProjectOrderByInput {
 type ProjectPreviousValues {
   id: ID!
   title: String!
-  link: String!
   description: String!
-  img: String!
+  link: String!
+  repo: String
+  img: String
+  image: String
   img2: String
+  image2: String
   img3: String
+  image3: String
 }
 
 type ProjectSubscriptionPayload {
@@ -172,20 +192,28 @@ input ProjectSubscriptionWhereInput {
 
 input ProjectUpdateInput {
   title: String
-  link: String
   description: String
+  link: String
+  repo: String
   img: String
+  image: String
   img2: String
+  image2: String
   img3: String
+  image3: String
 }
 
 input ProjectUpdateManyMutationInput {
   title: String
-  link: String
   description: String
+  link: String
+  repo: String
   img: String
+  image: String
   img2: String
+  image2: String
   img3: String
+  image3: String
 }
 
 input ProjectWhereInput {
@@ -277,46 +305,6 @@ input ProjectWhereInput {
 
   """All values not ending with the given string."""
   title_not_ends_with: String
-  link: String
-
-  """All values that are not equal to given value."""
-  link_not: String
-
-  """All values that are contained in given list."""
-  link_in: [String!]
-
-  """All values that are not contained in given list."""
-  link_not_in: [String!]
-
-  """All values less than the given value."""
-  link_lt: String
-
-  """All values less than or equal the given value."""
-  link_lte: String
-
-  """All values greater than the given value."""
-  link_gt: String
-
-  """All values greater than or equal the given value."""
-  link_gte: String
-
-  """All values containing the given string."""
-  link_contains: String
-
-  """All values not containing the given string."""
-  link_not_contains: String
-
-  """All values starting with the given string."""
-  link_starts_with: String
-
-  """All values not starting with the given string."""
-  link_not_starts_with: String
-
-  """All values ending with the given string."""
-  link_ends_with: String
-
-  """All values not ending with the given string."""
-  link_not_ends_with: String
   description: String
 
   """All values that are not equal to given value."""
@@ -357,6 +345,86 @@ input ProjectWhereInput {
 
   """All values not ending with the given string."""
   description_not_ends_with: String
+  link: String
+
+  """All values that are not equal to given value."""
+  link_not: String
+
+  """All values that are contained in given list."""
+  link_in: [String!]
+
+  """All values that are not contained in given list."""
+  link_not_in: [String!]
+
+  """All values less than the given value."""
+  link_lt: String
+
+  """All values less than or equal the given value."""
+  link_lte: String
+
+  """All values greater than the given value."""
+  link_gt: String
+
+  """All values greater than or equal the given value."""
+  link_gte: String
+
+  """All values containing the given string."""
+  link_contains: String
+
+  """All values not containing the given string."""
+  link_not_contains: String
+
+  """All values starting with the given string."""
+  link_starts_with: String
+
+  """All values not starting with the given string."""
+  link_not_starts_with: String
+
+  """All values ending with the given string."""
+  link_ends_with: String
+
+  """All values not ending with the given string."""
+  link_not_ends_with: String
+  repo: String
+
+  """All values that are not equal to given value."""
+  repo_not: String
+
+  """All values that are contained in given list."""
+  repo_in: [String!]
+
+  """All values that are not contained in given list."""
+  repo_not_in: [String!]
+
+  """All values less than the given value."""
+  repo_lt: String
+
+  """All values less than or equal the given value."""
+  repo_lte: String
+
+  """All values greater than the given value."""
+  repo_gt: String
+
+  """All values greater than or equal the given value."""
+  repo_gte: String
+
+  """All values containing the given string."""
+  repo_contains: String
+
+  """All values not containing the given string."""
+  repo_not_contains: String
+
+  """All values starting with the given string."""
+  repo_starts_with: String
+
+  """All values not starting with the given string."""
+  repo_not_starts_with: String
+
+  """All values ending with the given string."""
+  repo_ends_with: String
+
+  """All values not ending with the given string."""
+  repo_not_ends_with: String
   img: String
 
   """All values that are not equal to given value."""
@@ -397,6 +465,46 @@ input ProjectWhereInput {
 
   """All values not ending with the given string."""
   img_not_ends_with: String
+  image: String
+
+  """All values that are not equal to given value."""
+  image_not: String
+
+  """All values that are contained in given list."""
+  image_in: [String!]
+
+  """All values that are not contained in given list."""
+  image_not_in: [String!]
+
+  """All values less than the given value."""
+  image_lt: String
+
+  """All values less than or equal the given value."""
+  image_lte: String
+
+  """All values greater than the given value."""
+  image_gt: String
+
+  """All values greater than or equal the given value."""
+  image_gte: String
+
+  """All values containing the given string."""
+  image_contains: String
+
+  """All values not containing the given string."""
+  image_not_contains: String
+
+  """All values starting with the given string."""
+  image_starts_with: String
+
+  """All values not starting with the given string."""
+  image_not_starts_with: String
+
+  """All values ending with the given string."""
+  image_ends_with: String
+
+  """All values not ending with the given string."""
+  image_not_ends_with: String
   img2: String
 
   """All values that are not equal to given value."""
@@ -437,6 +545,46 @@ input ProjectWhereInput {
 
   """All values not ending with the given string."""
   img2_not_ends_with: String
+  image2: String
+
+  """All values that are not equal to given value."""
+  image2_not: String
+
+  """All values that are contained in given list."""
+  image2_in: [String!]
+
+  """All values that are not contained in given list."""
+  image2_not_in: [String!]
+
+  """All values less than the given value."""
+  image2_lt: String
+
+  """All values less than or equal the given value."""
+  image2_lte: String
+
+  """All values greater than the given value."""
+  image2_gt: String
+
+  """All values greater than or equal the given value."""
+  image2_gte: String
+
+  """All values containing the given string."""
+  image2_contains: String
+
+  """All values not containing the given string."""
+  image2_not_contains: String
+
+  """All values starting with the given string."""
+  image2_starts_with: String
+
+  """All values not starting with the given string."""
+  image2_not_starts_with: String
+
+  """All values ending with the given string."""
+  image2_ends_with: String
+
+  """All values not ending with the given string."""
+  image2_not_ends_with: String
   img3: String
 
   """All values that are not equal to given value."""
@@ -477,6 +625,46 @@ input ProjectWhereInput {
 
   """All values not ending with the given string."""
   img3_not_ends_with: String
+  image3: String
+
+  """All values that are not equal to given value."""
+  image3_not: String
+
+  """All values that are contained in given list."""
+  image3_in: [String!]
+
+  """All values that are not contained in given list."""
+  image3_not_in: [String!]
+
+  """All values less than the given value."""
+  image3_lt: String
+
+  """All values less than or equal the given value."""
+  image3_lte: String
+
+  """All values greater than the given value."""
+  image3_gt: String
+
+  """All values greater than or equal the given value."""
+  image3_gte: String
+
+  """All values containing the given string."""
+  image3_contains: String
+
+  """All values not containing the given string."""
+  image3_not_contains: String
+
+  """All values starting with the given string."""
+  image3_starts_with: String
+
+  """All values not starting with the given string."""
+  image3_not_starts_with: String
+
+  """All values ending with the given string."""
+  image3_ends_with: String
+
+  """All values not ending with the given string."""
+  image3_not_ends_with: String
 }
 
 input ProjectWhereUniqueInput {
@@ -520,8 +708,8 @@ type UserConnection {
 }
 
 input UserCreateInput {
-  password: String!
   name: String!
+  password: String!
 }
 
 """An edge in a connection."""
@@ -538,6 +726,8 @@ enum UserOrderByInput {
   id_DESC
   name_ASC
   name_DESC
+  password_ASC
+  password_DESC
   updatedAt_ASC
   updatedAt_DESC
   createdAt_ASC
@@ -547,6 +737,7 @@ enum UserOrderByInput {
 type UserPreviousValues {
   id: ID!
   name: String!
+  password: String!
 }
 
 type UserSubscriptionPayload {
@@ -590,10 +781,12 @@ input UserSubscriptionWhereInput {
 
 input UserUpdateInput {
   name: String
+  password: String
 }
 
 input UserUpdateManyMutationInput {
   name: String
+  password: String
 }
 
 input UserWhereInput {
@@ -685,6 +878,46 @@ input UserWhereInput {
 
   """All values not ending with the given string."""
   name_not_ends_with: String
+  password: String
+
+  """All values that are not equal to given value."""
+  password_not: String
+
+  """All values that are contained in given list."""
+  password_in: [String!]
+
+  """All values that are not contained in given list."""
+  password_not_in: [String!]
+
+  """All values less than the given value."""
+  password_lt: String
+
+  """All values less than or equal the given value."""
+  password_lte: String
+
+  """All values greater than the given value."""
+  password_gt: String
+
+  """All values greater than or equal the given value."""
+  password_gte: String
+
+  """All values containing the given string."""
+  password_contains: String
+
+  """All values not containing the given string."""
+  password_not_contains: String
+
+  """All values starting with the given string."""
+  password_starts_with: String
+
+  """All values not starting with the given string."""
+  password_not_starts_with: String
+
+  """All values ending with the given string."""
+  password_ends_with: String
+
+  """All values not ending with the given string."""
+  password_not_ends_with: String
 }
 
 input UserWhereUniqueInput {
