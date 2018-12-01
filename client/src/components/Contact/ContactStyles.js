@@ -1,12 +1,10 @@
 import styled from 'styled-components';
 
 const ContactStyles = styled.div`
-  width: 100vw;
-  height: 120vh;
+  width: 100%;
   display: inline-block;
   padding-top: 10vh;
   background-color: ${props => props.theme.mainBackground};
-  border-bottom: 1px solid ${props => props.theme.headerFooter};
   .innerland {
     margin: 0 auto;
     margin-top: 1rem;
