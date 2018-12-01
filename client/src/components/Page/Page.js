@@ -77,7 +77,7 @@ export default class Page extends Component {
               <Nav />
             </header>
             <div className="App-main">
-              <Body />
+              <Body {...this.props} />
             </div>
             <footer className="App-footer">
               <Buttons themeName={themeName} switchTheme={this.switchTheme} />

@@ -1,6 +1,7 @@
 type User {
   id: ID! @unique
-  name: String!
+  name: String! @unique
+  password: String!
 }
 type Project {
   id: ID! @unique

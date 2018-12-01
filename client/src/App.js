@@ -13,7 +13,6 @@ export default class MyApp extends Component {
   }
   render() {
     const { pageProps } = this.props;
-    console.log(pageProps);
     return <Page {...pageProps} />;
   }
 }

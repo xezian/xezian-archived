@@ -506,6 +506,7 @@ type Subscription {
 type User implements Node {
   id: ID!
   name: String!
+  password: String!
 }
 
 """A connection to a list of items."""
@@ -519,6 +520,7 @@ type UserConnection {
 }
 
 input UserCreateInput {
+  password: String!
   name: String!
 }
 
@@ -687,4 +689,5 @@ input UserWhereInput {
 
 input UserWhereUniqueInput {
   id: ID
+  name: String
 }

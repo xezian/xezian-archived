@@ -9,7 +9,8 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:5555'
+  uri: 'http://localhost:5555',
+  credentials: 'include'
 });
 
 const errorLink = onError(({ graphQLErrors }) => {
@@ -17,8 +18,8 @@ const errorLink = onError(({ graphQLErrors }) => {
 });
 
 const client = new ApolloClient({
-  link: ApolloLink.from([errorLink, httpLink]),
-  cache: new InMemoryCache()
+  cache: new InMemoryCache(),
+  link: ApolloLink.from([errorLink, httpLink])
 });
 
 ReactDOM.render(

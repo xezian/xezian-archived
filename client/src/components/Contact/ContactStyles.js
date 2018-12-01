@@ -18,6 +18,7 @@ const ContactStyles = styled.div`
     text-transform: uppercase;
     border: 1px solid ${props => props.theme.headerFooter};
     color: ${props => props.theme.textOne};
+    border-radius: 5px;
     width: 50vw;
     label {
       display: block;
