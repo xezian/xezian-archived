@@ -4,7 +4,7 @@ import styled from 'styled-components';
 const UnStyledButton = styled.button`
   padding-left: 1vw;
   position: absolute;
-  bottom: 0
+  bottom: 0;
   border: none;
   font: inherit;
   color: inherit;
