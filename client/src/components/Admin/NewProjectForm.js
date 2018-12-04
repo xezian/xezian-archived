@@ -37,7 +37,6 @@ class NewProjectForm extends Component {
         namelg = 'image3';
         break;
     }
-    console.log(namelg);
     const data = new FormData();
     data.append('file', files[0]);
     data.append('upload_preset', 'xezian');
