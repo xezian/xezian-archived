@@ -19,6 +19,9 @@ const Mutations = {
     return project;
   },
   async signup(parent, args, ctx, info) {
+    if(args.secret!==process.env.ADMIN_SECRET){
+      throw new Error('Invalid Password!');
+    }
     const password = await bcrypt.hash(args.password, 10);
     const user = await ctx.db.mutation.createUser(
       {

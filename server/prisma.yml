@@ -1,5 +1,6 @@
 #endpoint: ${env:PRISMA_ENDPOINT}
-endpoint: https://xezian-f41b40525e.herokuapp.com/xezian/production
+#endpoint: https://xezian-f41b40525e.herokuapp.com/xezian/production
+endpoint: https://xezian-f41b40525e.herokuapp.com/xezian/prod
 datamodel: datamodel.prisma
 secret: ${env:PRISMA_SECRET}
 hooks:
