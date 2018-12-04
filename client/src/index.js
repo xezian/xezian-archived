@@ -10,7 +10,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:5555',
+  uri: process.env.NODE_ENV === 'development' ? 'http://localhost:5555' : 'https://xezian-yoga-prod.herokuapp.com/',
   credentials: 'include'
 });
 
