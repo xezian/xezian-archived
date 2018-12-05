@@ -21,7 +21,7 @@ server.start(
   {
     cors: {
       credentials: true,
-      origin: [process.env.FRONTEND_URL, 'www.xezian.xyz', 'www.xezian.com']
+      origin: [process.env.FRONTEND_URL, 'http://www.xezian.xyz', 'http://www.xezian.com']
     }
   },
   deets => {
