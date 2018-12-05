@@ -710,6 +710,7 @@ type UserConnection {
 input UserCreateInput {
   name: String!
   password: String!
+  secret: String!
 }
 
 """An edge in a connection."""
