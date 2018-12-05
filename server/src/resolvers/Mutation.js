@@ -22,11 +22,13 @@ const Mutations = {
     if(args.secret!==process.env.ADMIN_SECRET){
       throw new Error('Invalid Password!');
     }
+    const secret = await bcrypt.hash(args.secret, 10);
     const password = await bcrypt.hash(args.password, 10);
     const user = await ctx.db.mutation.createUser(
       {
         data: {
           ...args,
+          secret,
           password
         }
       },
