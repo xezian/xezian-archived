@@ -36,6 +36,8 @@ class NewProjectForm extends Component {
       case 'img3':
         namelg = 'image3';
         break;
+      default:
+        break;  
     }
     const data = new FormData();
     data.append('file', files[0]);
