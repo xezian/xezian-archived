@@ -10,12 +10,12 @@ const PageStyles = styled.div`
     font-size: calc(10px + 2vmin);
   }
   .App-footer {
+    position: fixed;
+    bottom: 0;
     background-color: ${props => props.theme.headerFooter};
     min-height: 9vh;
     width: 100vw;
     font-size: calc(10px + 2vmin);
-    position: fixed;
-    bottom: 0;
   }
   .App-link {
     color: #61dafb;
