@@ -13,7 +13,7 @@ const NavStyles = styled.div`
     width: 100vw;
     height: 100px;
   }
-  .nav-item h4,
+  h4,
   a {
     position: relative;
     text-decoration: none;
@@ -22,7 +22,8 @@ const NavStyles = styled.div`
     top: 0;
     line-height: 0px;
     height: 0px;
-    padding: 0px 10px 0px 10px;
+    padding-right: 1vw;
+    padding-left: 1vw;
     :hover {
       color: ${props => props.theme.textOne};
     }

@@ -52,7 +52,7 @@ export default class Intro extends Component {
           Click a button and see what happens:{' '}
           <button onClick={this.mysteryButton}>?</button>
         </p>
-        <p>Thanks for swinging by. Enjoy your moment in time!</p>
+        <p>Thanks for swinging by!</p>
       </IntroStyles>
     );
   }

@@ -6,6 +6,8 @@ import { ALL_PROJECTS_QUERY } from './gql';
 
 const Center = styled.div`
   text-align: center;
+  padding-left: 5vw;
+  padding-right: 5vw;
   p {
     width: 80vw;
     text-align: left;
@@ -18,6 +20,11 @@ const ProjectsList = styled.div`
   grid-gap: 60px;
   max-width: ${props => props.theme.maxWidth};
   margin: 0 auto;
+  @media screen and (max-width: 725px) {
+    flex: 100%;
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
 `;
 
 export default class Projcts extends Component {

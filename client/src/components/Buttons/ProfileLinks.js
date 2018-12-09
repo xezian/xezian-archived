@@ -9,6 +9,12 @@ const LinkTray = styled.div`
     width: auto;
     padding: 0px 8px 0px 0px;
     height: 25px;
+    :hover {
+      height: 30px;
+    }
+    :active {
+      height: 23px;
+    }
   }
 `;
 

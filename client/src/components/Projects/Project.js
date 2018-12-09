@@ -17,7 +17,6 @@ export default class Project extends Component {
   };
   render() {
     const { project } = this.props;
-    console.log(project);
     return (
       <div>
         <Link to={`/project/${project.id}`}>

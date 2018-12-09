@@ -3,7 +3,8 @@ import styled from 'styled-components';
 const ContactStyles = styled.div`
   width: 100%;
   display: inline-block;
-  padding-top: 10vh;
+  padding-left: 5vw;
+  padding-right: 5vw;
   background-color: ${props => props.theme.mainBackground};
   .innerland {
     margin: 0 auto;
