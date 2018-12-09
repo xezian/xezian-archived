@@ -1,6 +1,9 @@
 import styled from 'styled-components';
 
 const PageStyles = styled.div`
+  a {
+    color: ${props => props.theme.linkText};
+  }
   .App-header {
     position: fixed;
     top: 0;
@@ -10,6 +13,8 @@ const PageStyles = styled.div`
     font-size: calc(10px + 2vmin);
   }
   .App-footer {
+    display: flex;
+    flex-direction: row;
     position: fixed;
     bottom: 0;
     background-color: ${props => props.theme.headerFooter};

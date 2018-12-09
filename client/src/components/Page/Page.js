@@ -2,18 +2,20 @@ import React, { Component } from 'react';
 import { ThemeProvider, createGlobalStyle } from 'styled-components';
 import PageStyles from './PageStyles';
 import Logo from '../Logo/Logo';
-import Buttons from '../Buttons/Buttons';
+import DarkLightButton from '../Buttons/Buttons';
+import ProfileLinks from '../Buttons/ProfileLinks';
 import Nav from '../Nav/Nav';
 import Body from '../Body/Body';
 
 const lightTheme = {
-  headerFooter: '#DABAEA',
+  headerFooter: '#ae94bc',
   mainBackground: '#a9e9e9',
   innerBackground: '#4567ef',
   formField: '#E1E1E1',
   textOne: '#1e305c',
   textTwo: '#02001c',
-  textThree: '000555'
+  textThree: '#000555',
+  linkText: 'purple'
 };
 
 const darkTheme = {
@@ -21,9 +23,10 @@ const darkTheme = {
   mainBackground: '#02001c',
   innerBackground: '#000555',
   formField: '#22405c',
-  textOne: '#DABAEA',
+  textOne: '#ae94bc',
   textTwo: '#4567ef',
-  textThree: '#e2e2e2'
+  textThree: '#e2e2e2',
+  linkText: 'white'
 };
 
 const GlobalStyle = createGlobalStyle`
@@ -43,7 +46,6 @@ const GlobalStyle = createGlobalStyle`
     }
     a {
         text-decoration: none;
-        color: #393939;
     }
 `;
 
@@ -71,14 +73,17 @@ class Page extends Component {
         <PageStyles>
           <GlobalStyle />
           <header className="App-header">
-            <Logo flex="row" />
+            <DarkLightButton
+              themeName={themeName}
+              switchTheme={this.switchTheme}
+            />
             <Nav theme={theme} {...this.props} />
           </header>
           <div className="App-main">
             <Body theme={theme} {...this.props} />
           </div>
           <footer className="App-footer">
-            <Buttons themeName={themeName} switchTheme={this.switchTheme} />
+            <ProfileLinks />
             <Logo flex="row-reverse" />
           </footer>
         </PageStyles>

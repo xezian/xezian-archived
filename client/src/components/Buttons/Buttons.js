@@ -15,7 +15,7 @@ const UnStyledButton = styled.button`
   }
 `;
 
-export default class componentName extends Component {
+export default class DarkLightButton extends Component {
   state = {
     themoji: '🌞'
   };

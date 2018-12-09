@@ -6,6 +6,10 @@ import { ALL_PROJECTS_QUERY } from './gql';
 
 const Center = styled.div`
   text-align: center;
+  p {
+    width: 80vw;
+    text-align: left;
+  }
 `;
 
 const ProjectsList = styled.div`
@@ -20,7 +24,12 @@ export default class Projcts extends Component {
   render() {
     return (
       <Center>
-        <p>My Projects!</p>
+        <p>
+          Please explore some of the web based projects I've worked on over the
+          past couple of years. It would be my pleasure to discuss any of these
+          with anyone interested. Check out my <a href="/contact">contact </a>
+          page.
+        </p>
         <Query query={ALL_PROJECTS_QUERY}>
           {({ data, error, loading }) => {
             if (loading) return <p>Loading...</p>;
