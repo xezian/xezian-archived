@@ -6,6 +6,16 @@ const IntroStyles = styled.div`
   button {
     background-color: ${props => props.backColor};
   }
+  .techList {
+    li {
+      list-style-image: url('/icons/coder.png');
+    }
+    li li {
+      list-style-image: none;
+      list-style-type: lower-greek;
+    }
+    line-height: 18px;
+  }
 `;
 
 export default IntroStyles;

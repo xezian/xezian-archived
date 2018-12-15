@@ -17,16 +17,16 @@ const UnStyledButton = styled.button`
 
 export default class DarkLightButton extends Component {
   state = {
-    themoji: '🌞'
+    themoji: '/icons/sunface.png'
   };
   themeSwitch = () => {
     switch (this.props.themeName) {
       case 'dark':
-        this.setState({ themoji: '🌚' });
+        this.setState({ themoji: '/icons/moonface.png' });
         this.props.switchTheme('light');
         break;
       case 'light':
-        this.setState({ themoji: '🌞' });
+        this.setState({ themoji: '/icons/sunface.png' });
         this.props.switchTheme('dark');
         break;
       default:
@@ -35,7 +35,7 @@ export default class DarkLightButton extends Component {
   render() {
     return (
       <UnStyledButton onClick={this.themeSwitch}>
-        {this.state.themoji}
+        <img src={this.state.themoji} alt={this.state.themoji} />
       </UnStyledButton>
     );
   }
