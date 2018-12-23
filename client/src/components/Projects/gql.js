@@ -2,12 +2,13 @@ import gql from 'graphql-tag';
 
 const ALL_PROJECTS_QUERY = gql`
   query ALL_PROJECTS_QUERY {
-    projects(orderBy: createdAt_DESC) {
+    projects(orderBy: sortorder_ASC) {
       id
       title
       link
       description
       img
+      sortorder
     }
   }
 `;
@@ -25,6 +26,7 @@ const SINGLE_PROJECT_QUERY = gql`
       image2
       img3
       image3
+      sortorder
     }
   }
 `;

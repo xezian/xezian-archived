@@ -1,5 +1,5 @@
-# source: http://localhost:4466
-# timestamp: Sat Dec 08 2018 10:07:12 GMT-0700 (Mountain Standard Time)
+# source: https://us1.prisma.sh/jason-a-leo-88a8a1/xezian/dev
+# timestamp: Sun Dec 23 2018 11:51:12 GMT-0700 (Mountain Standard Time)
 
 type AggregateProject {
   count: Int!
@@ -74,6 +74,7 @@ type Project implements Node {
   image2: String
   img3: String
   image3: String
+  sortorder: Int!
 }
 
 """A connection to a list of items."""
@@ -97,6 +98,7 @@ input ProjectCreateInput {
   image2: String
   img3: String
   image3: String
+  sortorder: Int!
 }
 
 """An edge in a connection."""
@@ -131,6 +133,8 @@ enum ProjectOrderByInput {
   img3_DESC
   image3_ASC
   image3_DESC
+  sortorder_ASC
+  sortorder_DESC
   updatedAt_ASC
   updatedAt_DESC
   createdAt_ASC
@@ -149,6 +153,7 @@ type ProjectPreviousValues {
   image2: String
   img3: String
   image3: String
+  sortorder: Int!
 }
 
 type ProjectSubscriptionPayload {
@@ -201,6 +206,7 @@ input ProjectUpdateInput {
   image2: String
   img3: String
   image3: String
+  sortorder: Int
 }
 
 input ProjectUpdateManyMutationInput {
@@ -214,6 +220,7 @@ input ProjectUpdateManyMutationInput {
   image2: String
   img3: String
   image3: String
+  sortorder: Int
 }
 
 input ProjectWhereInput {
@@ -665,10 +672,33 @@ input ProjectWhereInput {
 
   """All values not ending with the given string."""
   image3_not_ends_with: String
+  sortorder: Int
+
+  """All values that are not equal to given value."""
+  sortorder_not: Int
+
+  """All values that are contained in given list."""
+  sortorder_in: [Int!]
+
+  """All values that are not contained in given list."""
+  sortorder_not_in: [Int!]
+
+  """All values less than the given value."""
+  sortorder_lt: Int
+
+  """All values less than or equal the given value."""
+  sortorder_lte: Int
+
+  """All values greater than the given value."""
+  sortorder_gt: Int
+
+  """All values greater than or equal the given value."""
+  sortorder_gte: Int
 }
 
 input ProjectWhereUniqueInput {
   id: ID
+  sortorder: Int
 }
 
 type Query {

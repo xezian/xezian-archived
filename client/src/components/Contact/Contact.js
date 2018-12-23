@@ -33,7 +33,7 @@ export default class Contact extends Component {
                 <p>
                   Contact me here with any manner of questions, comments,
                   concerns, criticisms, or compliments. I welcome all of the the
-                  above and I will do my best to reply to your correspondences.
+                  above and I will do my best to reply.
                 </p>
                 <form
                   method="post"

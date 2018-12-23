@@ -52,10 +52,18 @@ const CREATE_PROJECT_MUTATION = gql`
     }
   }
 `;
+const SORT_ORDER_MUTATION = gql`
+  mutation SORT_ORDER_MUTATION($id: ID!, $amount: Int!, $sortorder: Int!) {
+    sortOrder(id: $id, amount: $amount, sortorder: $sortorder) {
+      message
+    }
+  }
+`;
 
 export {
   SIGNIN_MUTATION,
   SIGNOUT_MUTATION,
   CURRENT_USER_QUERY,
-  CREATE_PROJECT_MUTATION
+  CREATE_PROJECT_MUTATION,
+  SORT_ORDER_MUTATION
 };

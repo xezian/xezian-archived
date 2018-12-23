@@ -16,4 +16,5 @@ type Project {
   image2: String
   img3: String
   image3: String
+  sortorder: Int! @unique
 }

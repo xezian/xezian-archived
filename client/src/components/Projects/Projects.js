@@ -28,6 +28,12 @@ const ProjectsList = styled.div`
 `;
 
 export default class Projcts extends Component {
+  state = {
+    disabled: false
+  };
+  setDisabled = bool => {
+    this.setState({ disabled: bool });
+  };
   render() {
     return (
       <Center>
@@ -44,7 +50,14 @@ export default class Projcts extends Component {
             return (
               <ProjectsList>
                 {data.projects.map(project => {
-                  return <Project project={project} key={project.id} />;
+                  return (
+                    <Project
+                      setDisabled={this.setDisabled}
+                      disabled={this.state.disabled}
+                      project={project}
+                      key={project.id}
+                    />
+                  );
                 })}
               </ProjectsList>
             );

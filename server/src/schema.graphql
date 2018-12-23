@@ -8,6 +8,7 @@ type Mutation {
     emailMe(email: String, subject: String, body: String): SuccessMessage
     signup(password: String!, name: String!, secret: String!): User!
     signin(name: String!, password: String!): User!
+    sortOrder(id: ID!, amount: Int! sortorder: Int!): SuccessMessage
     signout: SuccessMessage
 }
 
