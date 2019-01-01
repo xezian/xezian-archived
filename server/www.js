@@ -24,7 +24,8 @@ server.start(
       origin: [
         process.env.FRONTEND_URL,
         'https://www.xezian.xyz',
-        'https://www.xezian.com'
+        'https://www.xezian.com',
+        'https://www.jasonandariel.com'
       ]
     }
   },

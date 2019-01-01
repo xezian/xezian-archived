@@ -75,7 +75,7 @@ const Mutations = {
     return { message: 'Goodbye!' };
   },
   async emailMe(parent, args, ctx, info) {
-    const mailRes = await transport.sendMail({
+    await transport.sendMail({
       from: process.env.MAIL_USER,
       to: 'jasonarnoldleo@gmail.com',
       replyTo: args.email,
@@ -83,6 +83,22 @@ const Mutations = {
       html: args.body
     });
     return { message: 'Thanks!' };
+  },
+  async emailUsBoth(parent, args, ctx, info) {
+    await transport.sendMail({
+      from: process.env.MAIL_USER,
+      to: args.email,
+      replyTo: 'jasonarnoldleo@gmail.com',
+      subject: args.subjectThanks,
+      html: args.bodyThanks
+    });
+    await transport.sendMail({
+      from: process.env.MAIL_USER,
+      to: 'jasonarnoldleo@gmail.com',
+      subject: args.subjectNotif,
+      html: args.bodyNotif
+    });
+    return { message: 'emails sent' };
   },
   async sortOrder(parent, args, ctx, info) {
     // are you logged in?
