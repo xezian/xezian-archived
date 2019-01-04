@@ -2,7 +2,7 @@ const bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 const { transport } = require('../mail');
 
-const Mutations = {
+const Mutation = {
   async createProject(parent, args, ctx, info) {
     if (!ctx.request.userId) {
       throw new Error('You need to be logged in for such actions');
@@ -152,4 +152,4 @@ const Mutations = {
   }
 };
 
-module.exports = Mutations;
+module.exports = Mutation;
