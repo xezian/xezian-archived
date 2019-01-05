@@ -18,6 +18,7 @@ const IntroStyles = styled.div`
   }
   #clock {
     cursor: pointer;
+    user-select: none;
   }
   #format {
   }
