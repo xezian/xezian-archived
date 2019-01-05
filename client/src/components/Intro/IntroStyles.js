@@ -16,6 +16,17 @@ const IntroStyles = styled.div`
     }
     line-height: 18px;
   }
+  #clock {
+    cursor: pointer;
+  }
+  #format {
+  }
+  #clock #format {
+    visibility: hidden;
+  }
+  #clock:hover #format {
+    visibility: visible;
+  }
 `;
 
 export default IntroStyles;

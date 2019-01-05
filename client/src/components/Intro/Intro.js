@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import IntroStyles from './IntroStyles';
+import moment from 'moment';
 
 export default class Intro extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      start: '',
       color: 'inherit',
       backColor: 'pink',
       colors: [
@@ -16,10 +18,34 @@ export default class Intro extends Component {
         'indigo',
         'violet',
         'inherit'
+      ],
+      format: 'LL',
+      formats: [
+        'lll',
+        'MMMM Do YYYY, h:mm:ss a',
+        'MMM Do YY',
+        'l',
+        'L',
+        '[The] DDDo [day of] YYYY',
+        '[The] Wo [week of] Y'
       ]
     };
     this.interval = null;
   }
+  componentDidMount() {
+    const start = moment(this.props.start).format(this.state.format);
+    this.setState({ start });
+  }
+
+  setFormat = e => {
+    e.preventDefault();
+    const formats = this.state.formats;
+    const newFormat = formats.splice(0, 1);
+    formats.push(this.state.format);
+    const start = moment(this.props.start).format(newFormat[0]);
+    this.setState({ formats, start, format: newFormat[0] });
+  };
+
   mysteryButton = e => {
     const { colors } = this.state;
     let i = 0;
@@ -32,12 +58,23 @@ export default class Intro extends Component {
     }, 1000);
   };
   render() {
+    const { start, color, backColor } = this.state;
     return (
-      <IntroStyles backColor={this.state.backColor} color={this.state.color}>
+      <IntroStyles backColor={backColor} color={color}>
         <h3>Hello!</h3>
         <p>
-          Welcome to my page. My name is Jason Leo and I do web development both
-          professionally and as a passion.
+          You found the web devlopment portfolio demonstration web project of
+          Jason Leo. It's on the internet! How exciting. I have been teaching
+          myself to build modern web applications since at least{' '}
+          <span
+            id="clock"
+            onClick={this.setFormat}
+            aria-label="clock"
+            role="img"
+          >
+            🕒
+          </span>
+          {` ${start}`}.
         </p>
         <p>Feel free to click around and explore!</p>
         <p>
@@ -63,7 +100,7 @@ export default class Intro extends Component {
           </a>
           .
         </p>
-        <p class="techList">
+        <div className="techList">
           Enjoy this list of Web Development technologies I've become proficient
           using!
           <ul>
@@ -107,7 +144,7 @@ export default class Intro extends Component {
               </ul>
             </li>
           </ul>
-        </p>
+        </div>
         <p>Thanks for swinging by!</p>
       </IntroStyles>
     );

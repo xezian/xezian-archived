@@ -7,6 +7,8 @@ import ProfileLinks from '../Buttons/ProfileLinks';
 import Nav from '../Nav/Nav';
 import Body from '../Body/Body';
 
+const timeOf = new Date(2017, 7, 7);
+
 const lightTheme = {
   headerFooter: '#ae94bc',
   mainBackground: '#a9e9e9',
@@ -51,6 +53,7 @@ const GlobalStyle = createGlobalStyle`
 
 class Page extends Component {
   state = {
+    start: timeOf,
     theme: darkTheme,
     themeName: 'dark'
   };
@@ -67,7 +70,7 @@ class Page extends Component {
     }
   };
   render() {
-    const { theme, themeName } = this.state;
+    const { start, theme, themeName } = this.state;
     return (
       <ThemeProvider theme={theme}>
         <PageStyles>
@@ -80,7 +83,7 @@ class Page extends Component {
             <Nav theme={theme} {...this.props} />
           </header>
           <div className="App-main">
-            <Body theme={theme} {...this.props} />
+            <Body theme={theme} start={start} {...this.props} />
           </div>
           <footer className="App-footer">
             <ProfileLinks />
