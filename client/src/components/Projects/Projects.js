@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import styled from 'styled-components';
 import Project from './Project';
+import Logo from '../Logo/Logo';
 import { ALL_PROJECTS_QUERY } from './gql';
 
 const Center = styled.div`
@@ -45,7 +46,7 @@ export default class Projcts extends Component {
         </p>
         <Query query={ALL_PROJECTS_QUERY}>
           {({ data, error, loading }) => {
-            if (loading) return <p>Loading...</p>;
+            if (loading) return <Logo time="5s" flex="column" />;
             if (error) return <p>Error: {error.message}</p>;
             return (
               <ProjectsList>

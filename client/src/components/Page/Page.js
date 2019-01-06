@@ -87,7 +87,7 @@ class Page extends Component {
           </div>
           <footer className="App-footer">
             <ProfileLinks />
-            <Logo flex="row-reverse" />
+            <Logo time="111s" flex="row-reverse" />
           </footer>
         </PageStyles>
       </ThemeProvider>

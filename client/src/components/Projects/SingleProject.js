@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Query } from 'react-apollo';
 import { SINGLE_PROJECT_QUERY } from './gql';
+import Logo from '../Logo/Logo';
 import styled from 'styled-components';
 
 const SingleProjectStyles = styled.div`
@@ -51,7 +52,7 @@ export default class SingleProject extends Component {
       >
         {({ error, loading, data }) => {
           if (error) return <div>{error}</div>;
-          if (loading) return <p>Loading...</p>;
+          if (loading) return <Logo time="5s" flex="column" />;
           if (!data.project) return <p>No project found for {this.props.id}</p>;
           const project = data.project;
           console.log(project);
