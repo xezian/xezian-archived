@@ -16,6 +16,25 @@ const IntroStyles = styled.div`
     }
     line-height: 18px;
   }
+  .outerBorder {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 20px;
+    background-color: ${props => props.theme.headerFooter}84;
+    border: 1px solid ${props => props.theme.textThree};
+    float: right;
+  }
+  #selfie {
+    display: block;
+    width: 300px;
+    padding: none;
+    border-radius: 13px;
+    border: 1px solid ${props => props.theme.textOne};
+    background-image: url('/images/selfie/jpg');
+    @media screen and (max-width: 525px) {
+      width: 100%;
+    }
+  }
   #clock {
     cursor: pointer;
     user-select: none;

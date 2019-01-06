@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import IntroStyles from './IntroStyles';
 import moment from 'moment';
+import IntroStyles from './IntroStyles';
+import selfie from '../../images/selfie.jpg';
 
 export default class Intro extends Component {
   constructor(props) {
@@ -61,6 +62,9 @@ export default class Intro extends Component {
     const { start, color, backColor } = this.state;
     return (
       <IntroStyles backColor={backColor} color={color}>
+        <div className="outerBorder">
+          <img src={selfie} id="selfie" alt="selfie" aria-label="selfie" />
+        </div>
         <h3>Hello!</h3>
         <p>
           You found the web devlopment portfolio demonstration web project of
