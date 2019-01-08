@@ -112,7 +112,12 @@ const Mutation = {
     });
     const highestSO = highest[0].sortorder;
     // don't let 1 or highestSO through this
-    if (args.sortorder >= highestSO || args.sortorder <= 1) {
+    if (
+      // can't get higher than highest
+      (args.sortorder >= highestSO && args.amount > 0) ||
+      // can't get any lower than lowest
+      (args.sortorder <= 1 && args.amount < 0)
+    ) {
       return { message: 'THE EDGE' };
     } else {
       // set sortorder target determined by amount arg
@@ -147,7 +152,7 @@ const Mutation = {
         },
         info
       );
-      return { message: 'Success' };
+      return { message: 'Sorted' };
     }
   }
 };
