@@ -109,43 +109,51 @@ export default class Intro extends Component {
           using!
           <ul>
             <li>
-              Languages
-              <ul>
-                <li>JavaScript</li>
-                <li>Adobe ColdFusion</li>
-                <li>CSS3</li>
-                <li>HTML5</li>
-                <li>Transact SQL</li>
-              </ul>
+              <details>
+                <summary>Languages</summary>
+                <ul>
+                  <li>JavaScript</li>
+                  <li>Adobe ColdFusion</li>
+                  <li>CSS3</li>
+                  <li>HTML5</li>
+                  <li>Transact SQL</li>
+                </ul>
+              </details>
             </li>
             <li>
-              Frameworks
-              <ul>
-                <li>Node.js</li>
-                <li>ReactJS</li>
-                <li>Bootstrap</li>
-                <li>Angular</li>
-                <li>Express.js</li>
-                <li>jQuery</li>
-                <li>Sass</li>
-              </ul>
+              <details>
+                <sumamry>Frameworks</sumamry>
+                <ul>
+                  <li>Node.js</li>
+                  <li>ReactJS</li>
+                  <li>Bootstrap</li>
+                  <li>Angular</li>
+                  <li>Express.js</li>
+                  <li>jQuery</li>
+                  <li>Sass</li>
+                </ul>
+              </details>
             </li>
             <li>
-              Database
-              <ul>
-                <li>MS SQL</li>
-                <li>MySQL</li>
-                <li>MongoDB</li>
-                <li>GraphQL</li>
-              </ul>
+              <details>
+                <summary>Database</summary>
+                <ul>
+                  <li>MS SQL</li>
+                  <li>MySQL</li>
+                  <li>MongoDB</li>
+                  <li>GraphQL</li>
+                </ul>
+              </details>
             </li>
             <li>
-              Other
-              <ul>
-                <li>Command Line</li>
-                <li>Git</li>
-                <li>SVN</li>
-              </ul>
+              <details>
+                <summary>Other</summary>
+                <ul>
+                  <li>Command Line</li>
+                  <li>Git</li>
+                  <li>SVN</li>
+                </ul>
+              </details>
             </li>
           </ul>
         </div>

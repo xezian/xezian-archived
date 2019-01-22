@@ -1,15 +1,44 @@
 import React, { Component } from 'react';
+import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
+
+const AnimationStyles = styled.span`
+  position: relative;
+  .daynight {
+    display: block;
+    position: relative;
+    transition: all 2s;
+    backface-visibility: hidden;
+  }
+  .daynight-enter {
+    transform: rotateY(0.5turn);
+  }
+  .daynight-enter-active {
+    transform: rotateY(0);
+  }
+  .daynight-exit {
+    top: 1rem;
+    position: absolute;
+    transform: rotateY(0);
+  }
+  .daynight-exit-active {
+    transform: rotateY(0.5turn);
+  }
+`;
 
 const UnStyledButton = styled.button`
   padding-left: 1vw;
   position: absolute;
-  bottom: 0;
+  top: 1rem;
+  left: 1rem;
   border: none;
   font: inherit;
   color: inherit;
   background-color: transparent;
   cursor: pointer;
+  img {
+    width: 2.5rem;
+  }
   :focus {
     outline: none;
   }
@@ -23,20 +52,36 @@ export default class DarkLightButton extends Component {
     switch (this.props.themeName) {
       case 'dark':
         this.setState({ themoji: '/icons/moonface.png' });
-        this.props.switchTheme('light');
+        setTimeout(() => {
+          this.props.switchTheme('light');
+        }, 1000);
         break;
       case 'light':
         this.setState({ themoji: '/icons/sunface.png' });
-        this.props.switchTheme('dark');
+        setTimeout(() => {
+          this.props.switchTheme('dark');
+        }, 1000);
         break;
       default:
     }
   };
   render() {
     return (
-      <UnStyledButton onClick={this.themeSwitch}>
-        <img src={this.state.themoji} alt={this.state.themoji} />
-      </UnStyledButton>
+      <AnimationStyles>
+        <TransitionGroup>
+          <CSSTransition
+            unmountOnExit
+            className="daynight"
+            classNames="daynight"
+            key={this.state.themoji}
+            timeout={{ enter: 2000, exit: 2000 }}
+          >
+            <UnStyledButton onClick={this.themeSwitch}>
+              <img src={this.state.themoji} alt={this.state.themoji} />
+            </UnStyledButton>
+          </CSSTransition>
+        </TransitionGroup>
+      </AnimationStyles>
     );
   }
 }
