@@ -3,10 +3,10 @@ import { TransitionGroup, CSSTransition } from 'react-transition-group';
 import styled from 'styled-components';
 
 const AnimationStyles = styled.span`
-  position: relative;
+  position: absolute;
   .daynight {
     display: block;
-    position: relative;
+    position: absolute;
     transition: all 2s;
     backface-visibility: hidden;
   }
