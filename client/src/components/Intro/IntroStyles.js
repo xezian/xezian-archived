@@ -8,6 +8,13 @@ const IntroStyles = styled.div`
   }
   .techList {
     li {
+      summary {
+        :focus {
+          outline: none;
+        }
+        cursor: pointer;
+        user-select: none;
+      }
       list-style-image: url('/icons/coder.png');
     }
     li li {
@@ -38,8 +45,6 @@ const IntroStyles = styled.div`
   #clock {
     cursor: pointer;
     user-select: none;
-  }
-  #format {
   }
   #clock #format {
     visibility: hidden;

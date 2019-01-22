@@ -122,7 +122,7 @@ export default class Intro extends Component {
             </li>
             <li>
               <details>
-                <sumamry>Frameworks</sumamry>
+                <summary>Frameworks</summary>
                 <ul>
                   <li>Node.js</li>
                   <li>ReactJS</li>
