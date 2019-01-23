@@ -27,7 +27,7 @@ const AnimationStyles = styled.span`
 `;
 
 const UnStyledButton = styled.button`
-  padding: 0.5rem;
+  margin: 0.5rem;
   position: absolute;
   top: 1rem;
   left: 1rem;
