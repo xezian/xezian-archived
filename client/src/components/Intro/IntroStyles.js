@@ -45,6 +45,8 @@ const IntroStyles = styled.div`
   #clock {
     cursor: pointer;
     user-select: none;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
   }
   #clock #format {
     visibility: hidden;

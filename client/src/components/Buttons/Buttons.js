@@ -11,26 +11,27 @@ const AnimationStyles = styled.span`
     backface-visibility: hidden;
   }
   .daynight-enter {
-    transform: rotateY(0.5turn);
+    transform: rotateY(180deg);
   }
   .daynight-enter-active {
     transform: rotateY(0);
   }
   .daynight-exit {
-    top: 1rem;
+    top: 0.7rem;
+    left: 0.3rem;
     position: absolute;
     transform: rotateY(0);
   }
   .daynight-exit-active {
-    transform: rotateY(0.5turn);
+    transform: rotateY(180deg);
   }
 `;
 
 const UnStyledButton = styled.button`
-  margin: 0.5rem;
+  margin: 0;
   position: absolute;
-  top: 1rem;
-  left: 1rem;
+  top: 0.7rem;
+  left: 0.3rem;
   border: none;
   font: inherit;
   color: inherit;

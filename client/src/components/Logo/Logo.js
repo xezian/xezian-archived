@@ -8,10 +8,11 @@ const LogoLayer = styled.img`
   position: absolute;
   animation: ${props => props.direction} infinite ${props => props.time} linear;
   height: 100px;
+  right: 0.5vw;
 `;
 
 const LogoContainer = styled.div`
-  height: 0px;
+  height: 1vh;
   width: 87vw;
   display: flex;
   flex-direction: ${props => props.flex};

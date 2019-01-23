@@ -15,6 +15,7 @@ const NavStyles = styled.div`
   }
   h4,
   a {
+    font-size: 4vw;
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
@@ -29,6 +30,9 @@ const NavStyles = styled.div`
     }
     :active {
       color: ${props => props.theme.textThree};
+    }
+    @media screen and (min-width: 650px) {
+      font-size: 26px;
     }
   }
 `;
