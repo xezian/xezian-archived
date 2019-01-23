@@ -27,7 +27,7 @@ const AnimationStyles = styled.span`
 `;
 
 const UnStyledButton = styled.button`
-  padding-left: 1vw;
+  padding: 0.5rem;
   position: absolute;
   top: 1rem;
   left: 1rem;
@@ -36,6 +36,9 @@ const UnStyledButton = styled.button`
   color: inherit;
   background-color: transparent;
   cursor: pointer;
+  user-select: none;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  -webkit-tap-highlight-color: transparent;
   img {
     width: 2.5rem;
   }
