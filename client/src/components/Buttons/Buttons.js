@@ -9,6 +9,7 @@ const AnimationStyles = styled.span`
     position: absolute;
     transition: all 2s;
     backface-visibility: hidden;
+    z-index: 1;
   }
   .daynight-enter {
     transform: rotateY(180deg);
