@@ -65,7 +65,7 @@ export default class Intro extends Component {
         <div className="outerBorder">
           <img src={selfie} id="selfie" alt="selfie" aria-label="selfie" />
         </div>
-        <h3>Hello!</h3>
+        <h1>Hello!</h1>
         <p>
           You found the web devlopment portfolio demonstration web project of
           Jason Leo. It's on the internet! How exciting. I have been teaching

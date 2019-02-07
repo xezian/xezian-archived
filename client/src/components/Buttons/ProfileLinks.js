@@ -6,9 +6,12 @@ const LinkTray = styled.div`
   left: 2vw;
   line-height: 75px;
   img {
+    background-color: ${props => props.theme.mainBackground};
+    border-radius: 50%;
     width: auto;
-    padding: 0px 8px 0px 0px;
-    height: 25px;
+    padding: 2px;
+    margin: 0px 4px;
+    height: 27px;
     :hover {
       height: 30px;
     }

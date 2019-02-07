@@ -10,28 +10,29 @@ import Body from '../Body/Body';
 const timeOf = new Date(2017, 7, 7);
 
 const lightTheme = {
-  headerFooter: '#ae94bc',
-  mainBackground: '#a9e9e9',
-  innerBackground: '#4567ef',
-  formField: '#E1E1E1',
-  textOne: '#1e305c',
-  textTwo: '#02001c',
-  textThree: '#000555',
-  linkText: 'purple'
+  headerFooter: '#c4b9c9',
+  mainBackground: '#d7e2e2',
+  innerBackground: '#265ca0',
+  formField: '#e2e2e2',
+  textOne: '#1d2538',
+  textTwo: '#0a0916',
+  textThree: '#1a1d4f',
+  linkText: '#22405c'
 };
 
 const darkTheme = {
-  headerFooter: '#1e305c',
-  mainBackground: '#02001c',
-  innerBackground: '#000555',
+  headerFooter: '#1d2538',
+  mainBackground: '#0a0916',
+  innerBackground: '#1a1d4f',
   formField: '#22405c',
-  textOne: '#ae94bc',
-  textTwo: '#4567ef',
+  textOne: '#c4b9c9',
+  textTwo: '#265ca0',
   textThree: '#e2e2e2',
-  linkText: 'white'
+  linkText: '#d7e2e2'
 };
 
 const GlobalStyle = createGlobalStyle`
+    @import url('https://fonts.googleapis.com/css?family=Cinzel|Lobster|Raleway');
     html {
         box-sizing: border-box;
         font-size: 10px;
@@ -44,7 +45,13 @@ const GlobalStyle = createGlobalStyle`
         margin: 0;
         font-size: 1.5rem;
         line-height: 2;
-        font-family: Arial, Helvetica, sans-serif;
+        font-family: Raleway, sans-serif;
+    }
+    h1, h2 {
+      font-family: Lobster, serif;
+    }
+    h3, h4 {
+      font-family: Cinzel, serif;
     }
     a {
         text-decoration: none;

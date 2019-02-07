@@ -9,6 +9,8 @@ const IntroStyles = styled.div`
   .techList {
     li {
       summary {
+        font-family: Lobster, serif;
+        font-size: 20px;
         :focus {
           outline: none;
         }
