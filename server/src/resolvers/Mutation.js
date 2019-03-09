@@ -88,13 +88,13 @@ const Mutation = {
     await transport.sendMail({
       from: process.env.MAIL_USER,
       to: args.email,
-      replyTo: 'jasonarnoldleo@gmail.com',
+      replyTo: 'jasonarnoldleo@gmail.com;ariel.f.and@gmail.com',
       subject: args.subjectThanks,
       html: args.bodyThanks
     });
     await transport.sendMail({
       from: process.env.MAIL_USER,
-      to: 'jasonarnoldleo@gmail.com',
+      to: 'jasonarnoldleo@gmail.com;ariel.f.and@gmail.com',
       subject: args.subjectNotif,
       html: args.bodyNotif
     });
