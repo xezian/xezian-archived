@@ -4,13 +4,16 @@ type SuccessMessage {
 }
 
 type Mutation {
+    # xezian.xyz
     createProject(title: String, link: String, repo: String, description: String, img: String, image: String, img2: String, image2: String, img3: String, image3: String): Project!
     emailMe(email: String, subject: String, body: String): SuccessMessage
-    emailUsBoth(email: String, subjectThanks: String, bodyThanks: String, subjectNotif: String, bodyNotif: String): SuccessMessage
     signup(password: String!, name: String!, secret: String!): User!
     signin(name: String!, password: String!): User!
     sortOrder(id: ID!, amount: Int! sortorder: Int!): SuccessMessage
     signout: SuccessMessage
+    # jasonandariel.com
+    rsvp(name: String!, email: String!, amount: Int!, vegetarian: Int, meat: Int, note: String): SuccessMessage
+    emailUsBoth(email: String, subjectThanks: String, bodyThanks: String, subjectNotif: String, bodyNotif: String): SuccessMessage
 }
 
 type Query {

@@ -18,3 +18,13 @@ type Project {
   image3: String
   sortorder: Int! @unique
 }
+type Guest {
+  id: ID! @unique
+  name: String!
+  email: String!
+  amount: Int!
+  vegetarian: Int
+  meat: Int
+  note: String
+  misc: String
+}

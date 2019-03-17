@@ -23,6 +23,7 @@ server.start(
       credentials: true,
       origin: [
         process.env.FRONTEND_URL,
+        process.env.OTHER_FRONTEND_URL,
         'https://www.xezian.xyz',
         'https://www.xezian.com',
         'https://www.jasonandariel.com'
