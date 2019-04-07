@@ -1,6 +1,11 @@
 import styled from 'styled-components';
+import background from '../../images/background.jpg';
 
 const IntroStyles = styled.div`
+  position: absolute;
+  top: 0;
+  margin: 0;
+  z-index: 0;
   padding: 15vh 5vw;
   color: ${props => props.color};
   button {
@@ -38,12 +43,12 @@ const IntroStyles = styled.div`
     float: right;
   }
   #selfie {
+    opacity: 0.6;
     display: block;
-    width: 300px;
+    width: 270px;
     padding: none;
     border-radius: 13px;
     border: 1px solid ${props => props.theme.textOne};
-    background-image: url('/images/selfie/jpg');
     @media screen and (max-width: 525px) {
       width: 100%;
     }
@@ -60,6 +65,12 @@ const IntroStyles = styled.div`
   #clock:hover #format {
     visibility: visible;
   }
+  background: linear-gradient(
+      ${props => props.theme.mainBackground}78,
+      ${props => props.theme.mainBackground}78
+    ),
+    url(${background});
+  background-size: cover;
 `;
 
 export default IntroStyles;

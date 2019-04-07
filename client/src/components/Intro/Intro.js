@@ -76,101 +76,103 @@ export default class Intro extends Component {
         <div className="outerBorder">
           <img src={selfie} id="selfie" alt="selfie" aria-label="selfie" />
         </div>
-        <h1>Hello!</h1>
-        <p>
-          You found the web devlopment portfolio demonstration web project of
-          Jason Leo. It's on the internet! How exciting. I have been teaching
-          myself to build modern web applications since at least{' '}
-          <span
-            id="clock"
-            onClick={this.setFormat}
-            aria-label="clock"
-            role="img"
-          >
-            🕒
-          </span>
-          {` ${start}`}.
-        </p>
-        <p>Feel free to click around and explore!</p>
-        <p>
-          Go ahead and download my resume:{' '}
-          <a href="/files/resume.pdf" download>
-            <span role="img" aria-label="scroll">
-              📜
+        <div className="texty">
+          <h1>Hello!</h1>
+          <p>
+            You found the web devlopment portfolio demonstration web project of
+            Jason Leo. It's on the internet! How exciting. I have been teaching
+            myself to build modern web applications since at least{' '}
+            <span
+              id="clock"
+              onClick={this.setFormat}
+              aria-label="clock"
+              role="img"
+            >
+              🕒
             </span>
-          </a>
-        </p>
-        <p>
-          Click a button and see what happens:{' '}
-          <button style={buttStyle} onClick={this.mysteryButton}>
-            ?
-          </button>
-        </p>
-        <p>
-          Visit the old (static html, css, js) version of my portfolio{' '}
-          <a
-            href="https://xezian.github.io/portfolio/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            here
-          </a>
-          .
-        </p>
-        <div className="techList">
-          Enjoy this list of Web Development technologies I've become proficient
-          using!
-          <ul>
-            <li>
-              <details>
-                <summary>Languages</summary>
-                <ul>
-                  <li>JavaScript</li>
-                  <li>Adobe ColdFusion</li>
-                  <li>CSS3</li>
-                  <li>HTML5</li>
-                  <li>Transact SQL</li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>Frameworks</summary>
-                <ul>
-                  <li>Node.js</li>
-                  <li>ReactJS</li>
-                  <li>Bootstrap</li>
-                  <li>Angular</li>
-                  <li>Express.js</li>
-                  <li>jQuery</li>
-                  <li>Sass</li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>Database</summary>
-                <ul>
-                  <li>MS SQL</li>
-                  <li>MySQL</li>
-                  <li>MongoDB</li>
-                  <li>GraphQL</li>
-                </ul>
-              </details>
-            </li>
-            <li>
-              <details>
-                <summary>Other</summary>
-                <ul>
-                  <li>Command Line</li>
-                  <li>Git</li>
-                  <li>SVN</li>
-                </ul>
-              </details>
-            </li>
-          </ul>
+            {` ${start}`}.
+          </p>
+          <p>Feel free to click around and explore!</p>
+          <p>
+            Go ahead and download my resume:{' '}
+            <a href="/files/resume.pdf" download>
+              <span role="img" aria-label="scroll">
+                📜
+              </span>
+            </a>
+          </p>
+          <p>
+            Click a button and see what happens:{' '}
+            <button style={buttStyle} onClick={this.mysteryButton}>
+              ?
+            </button>
+          </p>
+          <p>
+            Visit the old (static html, css, js) version of my portfolio{' '}
+            <a
+              href="https://xezian.github.io/portfolio/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              here
+            </a>
+            .
+          </p>
+          <div className="techList">
+            Enjoy this list of Web Development technologies I've become
+            proficient using!
+            <ul>
+              <li>
+                <details>
+                  <summary>Languages</summary>
+                  <ul>
+                    <li>JavaScript</li>
+                    <li>Adobe ColdFusion</li>
+                    <li>CSS3</li>
+                    <li>HTML5</li>
+                    <li>Transact SQL</li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>Frameworks</summary>
+                  <ul>
+                    <li>Node.js</li>
+                    <li>ReactJS</li>
+                    <li>Bootstrap</li>
+                    <li>Angular</li>
+                    <li>Express.js</li>
+                    <li>jQuery</li>
+                    <li>Sass</li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>Database</summary>
+                  <ul>
+                    <li>MS SQL</li>
+                    <li>MySQL</li>
+                    <li>MongoDB</li>
+                    <li>GraphQL</li>
+                  </ul>
+                </details>
+              </li>
+              <li>
+                <details>
+                  <summary>Other</summary>
+                  <ul>
+                    <li>Command Line</li>
+                    <li>Git</li>
+                    <li>SVN</li>
+                  </ul>
+                </details>
+              </li>
+            </ul>
+          </div>
+          <p>Thanks for swinging by!</p>
         </div>
-        <p>Thanks for swinging by!</p>
       </IntroStyles>
     );
   }

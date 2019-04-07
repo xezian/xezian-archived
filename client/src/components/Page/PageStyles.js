@@ -6,6 +6,7 @@ const PageStyles = styled.div`
   }
   .App-header {
     position: fixed;
+    z-index: 2;
     top: 0;
     background-color: ${props => props.theme.headerFooter};
     max-height: 9vh;
