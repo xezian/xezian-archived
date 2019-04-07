@@ -5,6 +5,10 @@ const IntroStyles = styled.div`
   color: ${props => props.color};
   button {
     background-color: ${props => props.backColor};
+    z-index: 3;
+    &:focus {
+      outline: 0;
+    }
   }
   .techList {
     li {

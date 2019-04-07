@@ -7,9 +7,11 @@ export default class Intro extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      i: 0,
       start: '',
       color: 'inherit',
       backColor: 'pink',
+      buttStyle: {},
       colors: [
         'red',
         'orange',
@@ -48,18 +50,27 @@ export default class Intro extends Component {
   };
 
   mysteryButton = e => {
-    const { colors } = this.state;
-    let i = 0;
-    this.interval = setInterval(() => {
-      this.setState({ color: colors[i], backColor: colors[i - 1] || 'pink' });
-      i++;
-      if (i >= colors.length) {
-        clearInterval(this.interval);
-      }
-    }, 1000);
+    const { i, colors } = this.state;
+    const buttStyle = {
+      position: `absolute`,
+      top: `${Math.floor(Math.random() * 100)}vh`,
+      left: `${Math.floor(Math.random() * 100)}vw`
+    };
+
+    this.setState({
+      buttStyle,
+      color: colors[i],
+      backColor:
+        colors[i + 1] || (i === colors.length - 1 ? 'pink' : colors[0]),
+      i: i + 1
+    });
+
+    if (i >= colors.length) {
+      this.setState({ i: 0 });
+    }
   };
   render() {
-    const { start, color, backColor } = this.state;
+    const { start, color, backColor, buttStyle } = this.state;
     return (
       <IntroStyles backColor={backColor} color={color}>
         <div className="outerBorder">
@@ -91,7 +102,9 @@ export default class Intro extends Component {
         </p>
         <p>
           Click a button and see what happens:{' '}
-          <button onClick={this.mysteryButton}>?</button>
+          <button style={buttStyle} onClick={this.mysteryButton}>
+            ?
+          </button>
         </p>
         <p>
           Visit the old (static html, css, js) version of my portfolio{' '}
