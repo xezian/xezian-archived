@@ -20,6 +20,8 @@ type Query {
     projects(where: ProjectWhereInput, orderBy: ProjectOrderByInput): [Project]!
     project(where: ProjectWhereUniqueInput!): Project
     me: User
+    # jasonandariel.com
+    guests(where: GuestWhereInput, orderBy: GuestOrderByInput): [Guest]!
 }
 
 type User {

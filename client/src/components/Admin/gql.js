@@ -59,11 +59,26 @@ const SORT_ORDER_MUTATION = gql`
     }
   }
 `;
+const ALL_GUESTS_QUERY = gql`
+  query ALL_GUESTS_QUERY {
+    guests(orderBy: name_ASC) {
+      id
+      name
+      email
+      amount
+      vegetarian
+      meat
+      note
+      misc
+    }
+  }
+`;
 
 export {
   SIGNIN_MUTATION,
   SIGNOUT_MUTATION,
   CURRENT_USER_QUERY,
   CREATE_PROJECT_MUTATION,
-  SORT_ORDER_MUTATION
+  SORT_ORDER_MUTATION,
+  ALL_GUESTS_QUERY
 };

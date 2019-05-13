@@ -13,7 +13,7 @@ const Mutation = {
       last: 1
     });
     // let's take it one step higher
-    const sortorder = highest[0].sortorder + 1;
+    const sortorder = highest.length > 0 ? highest[0].sortorder + 1 : 1;
     // mutation!
     const project = await ctx.db.mutation.createProject(
       {
@@ -68,6 +68,7 @@ const Mutation = {
       maxAge: 1000 * 60 * 60 * 24
     });
     // return the user
+    console.log(user);
     return user;
   },
   signout(parent, args, ctx, info) {

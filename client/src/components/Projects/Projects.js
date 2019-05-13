@@ -28,7 +28,7 @@ const ProjectsList = styled.div`
   }
 `;
 
-export default class Projcts extends Component {
+export default class Projects extends Component {
   state = {
     disabled: false
   };
