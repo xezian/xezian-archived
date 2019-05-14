@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { Query } from 'react-apollo';
-import styled from 'styled-components';
-import Logo from '../Logo/Logo';
-import { ALL_GUESTS_QUERY } from './gql';
+import React, { Component } from "react";
+import { Query } from "react-apollo";
+import styled from "styled-components";
+import Logo from "../Logo/Logo";
+import { ALL_GUESTS_QUERY } from "./gql";
 
 const GuestInfoStyles = styled.div`
   width: 100vw;
@@ -13,6 +13,17 @@ const GuestInfoStyles = styled.div`
     background-color: ${props => props.theme.headerFooter};
     min-width: 40vw;
     padding: 0 30px;
+    text-align: left;
+  }
+  .bright {
+    color: #efa;
+  }
+  .other-side {
+    float: right;
+  }
+  .center {
+    margin: auto;
+    display: table;
   }
   hr {
     width: 70vw;
@@ -28,19 +39,19 @@ export default class GuestList extends Component {
     return amt;
   };
   copyAllEmails = (e, guests) => {
-    let emails = '';
+    let emails = "";
     guests.forEach(guest => {
-      emails += guest.email + '; ';
+      emails += guest.email + "; ";
     });
     this.textArea.value = emails;
     this.textArea.select();
-    document.execCommand('copy');
+    document.execCommand("copy");
     e.target.focus();
   };
   emailAll = guests => {
-    let emails = '';
+    let emails = "";
     guests.forEach(guest => {
-      emails += guest.email + '; ';
+      emails += guest.email + "; ";
     });
     return (
       <a display="button" href={`mailto:${emails}`}>
@@ -56,11 +67,11 @@ export default class GuestList extends Component {
           if (error) return <p>Error: {error.message}</p>;
           return (
             <GuestInfoStyles>
-              Total: {this.countGuests(data.guests, 'amount')}
+              Total: {this.countGuests(data.guests, "amount")}
               <br />
-              Vegetarian: {this.countGuests(data.guests, 'vegetarian')}
+              Vegetarian: {this.countGuests(data.guests, "vegetarian")}
               <br />
-              Meat: {this.countGuests(data.guests, 'meat')}
+              Meat: {this.countGuests(data.guests, "meat")}
               <br />
               <button
                 onClick={e => {
@@ -86,11 +97,22 @@ export default class GuestList extends Component {
                 return (
                   <div key={guest.id}>
                     <div className="classy">
-                      <strong>{guest.name}</strong>
+                      <span className="bright">{guest.name}</span>{" "}
+                      <span className="other-side bright">
+                        party of {guest.amount}
+                      </span>
+                      <span className="center">&mdash;</span>
                       <br />
-                      {guest.vegetarian} vegetarians <br />
-                      {guest.meat} meats <br />
-                      {guest.amount} in the party <br />
+                      {guest.vegetarian && (
+                        <>
+                          {guest.vegetarian} vegetarians <br />
+                        </>
+                      )}
+                      {guest.meat && (
+                        <>
+                          {guest.meat} meat eaters <br />
+                        </>
+                      )}
                       <a href={`mailto:guest.email`}>{guest.email}</a> <br />
                       Note: {guest.note} <br /> <br />
                     </div>
