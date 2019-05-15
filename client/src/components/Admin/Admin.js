@@ -5,7 +5,7 @@ import PleaseSignIn from './PleaseSignIn';
 
 export default class Admin extends Component {
   state = {
-    choice: 'newproject'
+    choice: 'guestlist'
   };
   handleClick = e => {
     e.preventDefault();
