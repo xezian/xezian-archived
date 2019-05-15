@@ -59,7 +59,12 @@ export default class GuestList extends Component {
                 return (
                   <div key={guest.id}>
                     <div className="classy">
-                      <span className="bright">{guest.name}</span>{' '}
+                      <span className="bright">
+                        {guest.name
+                          .replace('&amp;', '&')
+                          .replace('&nbsp;', '')
+                          .replace('<br>', '')}
+                      </span>{' '}
                       <span className="other-side bright">
                         party of {guest.amount}
                       </span>
