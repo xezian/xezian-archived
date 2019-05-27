@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import background from "../../images/background.jpg";
+import styled from 'styled-components';
+import background from '../../images/background.jpg';
 
 const IntroStyles = styled.div`
   background: linear-gradient(
@@ -12,7 +12,7 @@ const IntroStyles = styled.div`
   min-width: 100%;
   min-height: 100%;
   z-index: 0;
-  padding: 10vh 10vw 25vh 10vw;
+  padding: 15vw;
   color: ${props => props.color};
   button {
     background-color: ${props => props.backColor};
@@ -32,7 +32,7 @@ const IntroStyles = styled.div`
         cursor: pointer;
         user-select: none;
       }
-      list-style-image: url("/icons/coder.png");
+      list-style-image: url('/icons/coder.png');
     }
     li li {
       list-style-image: none;
