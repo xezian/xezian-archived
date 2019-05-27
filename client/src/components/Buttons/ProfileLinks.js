@@ -1,16 +1,24 @@
-import React, { Component } from 'react';
-import styled from 'styled-components';
+import React, { Component } from "react";
+import styled from "styled-components";
 
 const LinkTray = styled.div`
   position: absolute;
   left: 2vw;
-  line-height: 75px;
+  width: 180px;
+  height: 7vh;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-columns: repeat(4, 20px);
+  grid-template-rows: 1fr;
+  align-items: center;
+  justify-items: center;
+  justify-content: space-around;
+  align-content: space-around;
   img {
     background-color: ${props => props.theme.mainBackground};
     border-radius: 50%;
     width: auto;
     padding: 2px;
-    margin: 0px 4px;
     height: 27px;
     :hover {
       height: 30px;
@@ -26,23 +34,23 @@ export default class ProfileLinks extends Component {
     links: [
       {
         uid: 1,
-        link: 'https://github.com/xezian',
-        name: 'github'
+        link: "https://github.com/xezian",
+        name: "github"
       },
       {
         uid: 2,
-        link: 'https://stackoverflow.com/users/8524758/jsonaleo',
-        name: 'stackoverflow'
+        link: "https://stackoverflow.com/users/8524758/jsonaleo",
+        name: "stackoverflow"
       },
       {
         uid: 3,
-        link: 'https://www.linkedin.com/in/jason-a-leo',
-        name: 'linkedin'
+        link: "https://www.linkedin.com/in/jason-a-leo",
+        name: "linkedin"
       },
       {
         uid: 4,
-        link: 'https://twitter.com/JSONaleo',
-        name: 'twitter'
+        link: "https://twitter.com/JSONaleo",
+        name: "twitter"
       }
     ]
   };

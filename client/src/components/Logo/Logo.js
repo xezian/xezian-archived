@@ -1,13 +1,13 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-import logo1 from './logo/logo1.svg';
-import logo2 from './logo/logo2.svg';
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+import logo1 from "./logo/logo1.svg";
+import logo2 from "./logo/logo2.svg";
 
 const LogoLayer = styled.img`
   position: absolute;
   animation: ${props => props.direction} infinite ${props => props.time} linear;
-  height: 100px;
+  height: 3em;
   right: 0.5vw;
 `;
 

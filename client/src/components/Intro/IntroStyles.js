@@ -1,12 +1,18 @@
-import styled from 'styled-components';
-import background from '../../images/background.jpg';
+import styled from "styled-components";
+import background from "../../images/background.jpg";
 
 const IntroStyles = styled.div`
-  position: absolute;
-  top: 0;
+  background: linear-gradient(
+      ${props => props.theme.mainBackground}78,
+      ${props => props.theme.mainBackground}78
+    ),
+    url(${background});
+  background-size: cover;
   margin: 0;
+  min-width: 100%;
+  min-height: 100%;
   z-index: 0;
-  padding: 15vh 5vw;
+  padding: 10vh 10vw 20vh 10vw;
   color: ${props => props.color};
   button {
     background-color: ${props => props.backColor};
@@ -26,7 +32,7 @@ const IntroStyles = styled.div`
         cursor: pointer;
         user-select: none;
       }
-      list-style-image: url('/icons/coder.png');
+      list-style-image: url("/icons/coder.png");
     }
     li li {
       list-style-image: none;
@@ -65,12 +71,6 @@ const IntroStyles = styled.div`
   #clock:hover #format {
     visibility: visible;
   }
-  background: linear-gradient(
-      ${props => props.theme.mainBackground}78,
-      ${props => props.theme.mainBackground}78
-    ),
-    url(${background});
-  background-size: cover;
 `;
 
 export default IntroStyles;

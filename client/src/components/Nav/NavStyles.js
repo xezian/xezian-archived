@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const NavStyles = styled.div`
   .shim {
@@ -11,7 +11,6 @@ const NavStyles = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     width: 100vw;
-    height: 100px;
   }
   h4,
   a {

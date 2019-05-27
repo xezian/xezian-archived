@@ -1,14 +1,17 @@
-import React, { Component } from 'react';
-import { Query } from 'react-apollo';
-import styled from 'styled-components';
-import Project from './Project';
-import Logo from '../Logo/Logo';
-import { ALL_PROJECTS_QUERY } from './gql';
+import React, { Component } from "react";
+import { Query } from "react-apollo";
+import styled from "styled-components";
+import Project from "./Project";
+import Logo from "../Logo/Logo";
+import { ALL_PROJECTS_QUERY } from "./gql";
 
 const Center = styled.div`
   text-align: center;
   padding-left: 5vw;
   padding-right: 5vw;
+  min-width: 100%;
+  min-height: 100%;
+  padding: 5vh 10vw;
   p {
     width: 80vw;
     text-align: left;

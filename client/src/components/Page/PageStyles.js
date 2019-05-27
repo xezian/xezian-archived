@@ -1,27 +1,24 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const PageStyles = styled.div`
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   a {
     color: ${props => props.theme.linkText};
   }
   .App-header {
-    position: fixed;
     z-index: 2;
-    top: 0;
     background-color: ${props => props.theme.headerFooter};
     max-height: 9vh;
     width: 100vw;
     font-size: calc(10px + 2vmin);
   }
   .App-footer {
-    display: flex;
-    flex-direction: row;
-    position: fixed;
-    bottom: 0;
-    background-color: ${props => props.theme.headerFooter};
-    min-height: 9vh;
+    align-self: flex-end;
     width: 100vw;
-    font-size: calc(10px + 2vmin);
+    background-color: ${props => props.theme.headerFooter};
+    height: 8vh;
   }
   .App-link {
     color: #61dafb;
