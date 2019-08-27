@@ -1,9 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const PageStyles = styled.div`
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
   a {
     color: ${props => props.theme.linkText};
   }
@@ -15,8 +14,7 @@ const PageStyles = styled.div`
     font-size: calc(10px + 2vmin);
   }
   .App-footer {
-    align-self: flex-end;
-    width: 100vw;
+    min-width: 100vw;
     background-color: ${props => props.theme.headerFooter};
     height: 8vh;
   }

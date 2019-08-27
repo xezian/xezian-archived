@@ -51,10 +51,14 @@ const ContactStyles = styled.div`
       height: 41px;
       line-height: 41px;
       border-radius: 1rem;
-      background-color: ${props => props.theme.mainBackground};
+      background-color: #c2a1ff;
       border: 1px solid ${props => props.theme.headerFooter};
       font-size: 2rem;
       font-weight: 600;
+    }
+    button,
+    input[type='submit']:disabled span {
+      color: black;
     }
     button:hover,
     input[type='submit'] {
