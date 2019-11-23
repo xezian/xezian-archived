@@ -1,11 +1,10 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 const ContactStyles = styled.div`
   width: 100%;
   display: inline-block;
   padding-left: 5vw;
   padding-right: 5vw;
-  background-color: ${props => props.theme.mainBackground};
   .innerland {
     margin: 0 auto;
     margin-top: 1rem;
@@ -44,7 +43,7 @@ const ContactStyles = styled.div`
       font-family: cursive;
     }
     button,
-    input[type='submit'] {
+    input[type="submit"] {
       display: inline-block;
       margin: 0 auto;
       width: auto;
@@ -57,16 +56,16 @@ const ContactStyles = styled.div`
       font-weight: 600;
     }
     button,
-    input[type='submit']:disabled span {
+    input[type="submit"]:disabled span {
       color: black;
     }
     button:hover,
-    input[type='submit'] {
+    input[type="submit"] {
       background-color: ${props => props.theme.mainBackground};
       border: 1px solid ${props => props.theme.formField};
     }
     button:active,
-    input[type='submit'] {
+    input[type="submit"] {
       background-color: ${props => props.theme.headerFooter};
       border: 1px solid ${props => props.theme.mainBackground};
     }

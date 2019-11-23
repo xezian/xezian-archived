@@ -44,7 +44,7 @@ const GlobalStyle = createGlobalStyle`
         padding: 0;
         margin: 0;
         font-size: 1.5rem;
-        line-height: 2;
+        line-height: 1.5;
         font-family: Raleway, sans-serif;
     }
     h1, h2 {
@@ -82,20 +82,20 @@ class Page extends Component {
       <ThemeProvider theme={theme}>
         <PageStyles>
           <GlobalStyle />
-          <header className="App-header">
-            <DarkLightButton
-              themeName={themeName}
-              switchTheme={this.switchTheme}
-            />
-            <Nav theme={theme} {...this.props} />
-          </header>
-          <div className="App-main">
+          <>
+            <header className="App-header">
+              <DarkLightButton
+                themeName={themeName}
+                switchTheme={this.switchTheme}
+              />
+              <Nav theme={theme} {...this.props} />
+            </header>
             <Body theme={theme} start={start} {...this.props} />
-          </div>
-          <footer className="App-footer">
-            <Logo time="10s" flex="row" />
-            <ProfileLinks />
-          </footer>
+            <footer className="App-footer">
+              <Logo time="10s" flex="row" />
+              <ProfileLinks />
+            </footer>
+          </>
         </PageStyles>
       </ThemeProvider>
     );

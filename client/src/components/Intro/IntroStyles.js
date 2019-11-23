@@ -1,24 +1,10 @@
-import styled from 'styled-components';
-import background from '../../images/background.jpg';
+import styled from "styled-components";
 
 const IntroStyles = styled.div`
-  background: linear-gradient(
-      ${props => props.theme.mainBackground}78,
-      ${props => props.theme.mainBackground}78
-    ),
-    url(${background});
-  background-size: cover;
-  margin: 0;
-  min-width: 100%;
-  min-height: 100%;
-  z-index: 0;
-  padding: 15vw;
-  color: ${props => props.color};
-  button {
-    background-color: ${props => props.backColor};
-    z-index: 3;
-    &:focus {
-      outline: 0;
+  details {
+    padding: 5px 0;
+    summary::-webkit-details-marker {
+      display: none;
     }
   }
   .techList {
@@ -32,13 +18,16 @@ const IntroStyles = styled.div`
         cursor: pointer;
         user-select: none;
       }
-      list-style-image: url('/icons/coder.png');
+      list-style: none;
+    }
+    li li:first-child {
+      margin-top: 10px;
     }
     li li {
       list-style-image: none;
       list-style-type: lower-greek;
     }
-    line-height: 18px;
+    line-height: 25px;
   }
   .outerBorder {
     padding: 10px;
@@ -52,6 +41,7 @@ const IntroStyles = styled.div`
     opacity: 0.6;
     display: block;
     width: 270px;
+    margin: 0 auto;
     padding: none;
     border-radius: 13px;
     border: 1px solid ${props => props.theme.textOne};
