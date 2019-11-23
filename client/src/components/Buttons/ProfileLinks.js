@@ -45,12 +45,12 @@ export default class ProfileLinks extends Component {
       {
         uid: 3,
         link: "https://www.linkedin.com/in/jason-a-leo",
-        name: "linkedin"
+        name: "linkdn"
       },
       {
         uid: 4,
         link: "https://twitter.com/JSONaleo",
-        name: "twitter"
+        name: "twit"
       }
     ]
   };
@@ -65,7 +65,7 @@ export default class ProfileLinks extends Component {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <img src={`/icons/${link.name}.png`} alt={link.name} />
+              <img src={`/icons/${link.name}.png`} alt="social-icon" />
             </a>
           );
         })}

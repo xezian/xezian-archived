@@ -12,8 +12,6 @@ const BodyStyles = styled.div`
     url(${background});
   background-size: cover;
   margin: 0;
-  min-width: 100%;
-  min-height: 100%;
   z-index: 0;
   color: ${props => props.color};
   button {
