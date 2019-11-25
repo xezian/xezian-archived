@@ -1,10 +1,9 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const ContactStyles = styled.div`
   width: 100%;
-  display: inline-block;
-  padding-left: 5vw;
-  padding-right: 5vw;
+  display: flex;
+  flex-direction: column;
   .innerland {
     margin: 0 auto;
     margin-top: 1rem;
@@ -43,29 +42,29 @@ const ContactStyles = styled.div`
       font-family: cursive;
     }
     button,
-    input[type="submit"] {
+    input[type='submit'] {
       display: inline-block;
       margin: 0 auto;
       width: auto;
       height: 41px;
       line-height: 41px;
       border-radius: 1rem;
-      background-color: #c2a1ff;
+      background-color: ${props => props.theme.textTwo};
       border: 1px solid ${props => props.theme.headerFooter};
       font-size: 2rem;
       font-weight: 600;
     }
     button,
-    input[type="submit"]:disabled span {
+    input[type='submit']:disabled span {
       color: black;
     }
     button:hover,
-    input[type="submit"] {
+    input[type='submit'] {
       background-color: ${props => props.theme.mainBackground};
       border: 1px solid ${props => props.theme.formField};
     }
     button:active,
-    input[type="submit"] {
+    input[type='submit'] {
       background-color: ${props => props.theme.headerFooter};
       border: 1px solid ${props => props.theme.mainBackground};
     }
