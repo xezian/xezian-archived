@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Query } from 'react-apollo';
+import { Link } from 'react-router-dom';
 import { SINGLE_PROJECT_QUERY } from './gql';
 import Logo from '../Logo/Logo';
 import styled from 'styled-components';
@@ -47,7 +48,7 @@ export default class SingleProject extends Component {
       <Query
         query={SINGLE_PROJECT_QUERY}
         variables={{
-          id: this.props.match.params.id
+          id: this.props.projectId
         }}
       >
         {({ error, loading, data }) => {
@@ -55,9 +56,11 @@ export default class SingleProject extends Component {
           if (loading) return <Logo time="5s" flex="column" />;
           if (!data.project) return <p>No project found for {this.props.id}</p>;
           const project = data.project;
-          console.log(project);
           return (
             <SingleProjectStyles>
+              <Link to={`/projects/`}>
+                <p>{'<---'} All Projects</p>
+              </Link>
               <div className="images">
                 <img src={project.image} alt={project.title} />
                 <img src={project.image2} alt={project.title} />

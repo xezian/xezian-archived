@@ -1,36 +1,37 @@
-import React, { Component } from "react";
-import moment from "moment";
-import IntroStyles from "./IntroStyles";
-import selfie from "../../images/selfie.jpg";
+import React, { Component } from 'react';
+import moment from 'moment';
+import IntroStyles from './IntroStyles';
+import OuterBorder from '../Page/OuterBorder';
+import selfie from '../../images/selfie.jpg';
 
 export default class Intro extends Component {
   constructor(props) {
     super(props);
     this.state = {
       i: 0,
-      start: "",
-      color: "inherit",
-      backColor: "pink",
+      start: '',
+      color: 'inherit',
+      backColor: 'pink',
       buttStyle: {},
       colors: [
-        "red",
-        "orange",
-        "yellow",
-        "green",
-        "blue",
-        "indigo",
-        "violet",
-        "inherit"
+        'red',
+        'orange',
+        'yellow',
+        'green',
+        'blue',
+        'indigo',
+        'violet',
+        'inherit'
       ],
-      format: "LL",
+      format: 'LL',
       formats: [
-        "lll",
-        "MMMM Do YYYY, h:mm:ss a",
-        "MMM Do YY",
-        "l",
-        "L",
-        "[The] DDDo [day of] YYYY",
-        "[The] Wo [week of] Y"
+        'lll',
+        'MMMM Do YYYY, h:mm:ss a',
+        'MMM Do YY',
+        'l',
+        'L',
+        '[The] DDDo [day of] YYYY',
+        '[The] Wo [week of] Y'
       ]
     };
     this.interval = null;
@@ -51,17 +52,20 @@ export default class Intro extends Component {
 
   mysteryButton = e => {
     const { i, colors } = this.state;
+    const backColor =
+      colors[i + 1] || (i === colors.length - 1 ? 'pink' : colors[0]);
     const buttStyle = {
       position: `absolute`,
+      zIndex: 5,
       top: `${Math.floor(Math.random() * 100)}vh`,
-      left: `${Math.floor(Math.random() * 100)}vw`
+      left: `${Math.floor(Math.random() * 100)}vw`,
+      backgroundColor: `${backColor}`
     };
 
     this.setState({
       buttStyle,
       color: colors[i],
-      backColor:
-        colors[i + 1] || (i === colors.length - 1 ? "pink" : colors[0]),
+      backColor,
       i: i + 1
     });
 
@@ -73,14 +77,17 @@ export default class Intro extends Component {
     const { start, color, backColor, buttStyle } = this.state;
     return (
       <IntroStyles backColor={backColor} color={color}>
-        <div className="outerBorder">
+        <OuterBorder>
           <h1>Hello!</h1>
           <img src={selfie} id="selfie" alt="selfie" aria-label="selfie" />
           <div className="texty">
             <p>
               You found the web devlopment portfolio demonstration web project
-              of Jason Leo. It's on the internet! How exciting. I have been
-              teaching myself to build modern web applications since at least{" "}
+              of Jason Leo.
+              <br />
+              It's on the internet! How exciting.
+              <br />I have been teaching myself to build modern web applications
+              since at least{' '}
               <span
                 id="clock"
                 onClick={this.setFormat}
@@ -93,7 +100,7 @@ export default class Intro extends Component {
             </p>
             <p>Feel free to click around and explore!</p>
             <p>
-              Go ahead and download my resume:{" "}
+              Go ahead and download my resume:{' '}
               <a href="/files/resume.pdf" download>
                 <span role="img" aria-label="scroll">
                   📜
@@ -101,13 +108,13 @@ export default class Intro extends Component {
               </a>
             </p>
             <p>
-              Click a button and see what happens:{" "}
+              Click a button and see what happens:{' '}
               <button style={buttStyle} onClick={this.mysteryButton}>
                 ?
               </button>
             </p>
             <p>
-              Visit the old (static html, css, js) version of my portfolio{" "}
+              Visit the old (static html, css, js) version of my portfolio{' '}
               <a
                 href="https://xezian.github.io/portfolio/"
                 target="_blank"
@@ -126,7 +133,7 @@ export default class Intro extends Component {
                     <summary>
                       <span role="img" aria-label="speech bubble">
                         &#x1F4AC;
-                      </span>{" "}
+                      </span>{' '}
                       Languages
                     </summary>
                     <ul>
@@ -143,7 +150,7 @@ export default class Intro extends Component {
                     <summary>
                       <span role="img" aria-label="eye-glasses">
                         &#x1F453;
-                      </span>{" "}
+                      </span>{' '}
                       Frameworks
                     </summary>
                     <ul>
@@ -162,7 +169,7 @@ export default class Intro extends Component {
                     <summary>
                       <span role="img" aria-label="filing cabinet">
                         &#x1F5C4;
-                      </span>{" "}
+                      </span>{' '}
                       Database
                     </summary>
                     <ul>
@@ -178,7 +185,7 @@ export default class Intro extends Component {
                     <summary>
                       <span role="img" aria-label="control knobs">
                         &#x1F39B;
-                      </span>{" "}
+                      </span>{' '}
                       Other
                     </summary>
                     <ul>
@@ -192,7 +199,7 @@ export default class Intro extends Component {
             </div>
             <p>Thanks for swinging by!</p>
           </div>
-        </div>
+        </OuterBorder>
       </IntroStyles>
     );
   }

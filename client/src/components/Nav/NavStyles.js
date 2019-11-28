@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const NavStyles = styled.div`
   .shim {
@@ -11,10 +11,11 @@ const NavStyles = styled.div`
     justify-content: flex-start;
     align-items: flex-start;
     width: 100vw;
+    max-width: 100%;
   }
   h4,
   a {
-    font-size: 4vw;
+    font-size: 16px;
     position: relative;
     text-decoration: none;
     text-transform: uppercase;
@@ -29,9 +30,6 @@ const NavStyles = styled.div`
     }
     :active {
       color: ${props => props.theme.textThree};
-    }
-    @media screen and (min-width: 650px) {
-      font-size: 26px;
     }
   }
 `;

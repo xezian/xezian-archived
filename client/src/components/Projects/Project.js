@@ -27,7 +27,7 @@ export default class Project extends Component {
       <User {...this.props}>
         {({ data: { me } }) => (
           <Box>
-            <Link to={`/project/${project.id}`}>
+            <Link to={`/projects/${project.id}`}>
               <Thumb src={project.img} alt={project.title} />
               <h4>{project.title}</h4>
             </Link>

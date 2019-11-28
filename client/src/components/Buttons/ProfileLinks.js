@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import styled from "styled-components";
+import React, { Component } from 'react';
+import styled from 'styled-components';
 
 const LinkTray = styled.div`
   position: absolute;
   left: 2vw;
   width: 180px;
-  height: 7vh;
+  height: 16px;
   display: grid;
   grid-gap: 10px;
   grid-template-columns: repeat(4, 20px);
@@ -19,7 +19,7 @@ const LinkTray = styled.div`
     border-radius: 50%;
     width: auto;
     padding: 2px;
-    height: 27px;
+    height: 17px;
     :hover {
       height: 30px;
     }
@@ -34,23 +34,23 @@ export default class ProfileLinks extends Component {
     links: [
       {
         uid: 1,
-        link: "https://github.com/xezian",
-        name: "github"
+        link: 'https://github.com/xezian',
+        name: 'github'
       },
       {
         uid: 2,
-        link: "https://stackoverflow.com/users/8524758/jsonaleo",
-        name: "stackoverflow"
+        link: 'https://stackoverflow.com/users/8524758/jsonaleo',
+        name: 'stackoverflow'
       },
       {
         uid: 3,
-        link: "https://www.linkedin.com/in/jason-a-leo",
-        name: "linkdn"
+        link: 'https://www.linkedin.com/in/jason-a-leo',
+        name: 'linkdn'
       },
       {
         uid: 4,
-        link: "https://twitter.com/JSONaleo",
-        name: "twit"
+        link: 'https://twitter.com/JSONaleo',
+        name: 'twit'
       }
     ]
   };

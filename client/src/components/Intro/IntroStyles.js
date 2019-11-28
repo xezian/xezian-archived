@@ -1,6 +1,10 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 const IntroStyles = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: ${props => props.color};
   details {
     padding: 5px 0;
     summary::-webkit-details-marker {
@@ -28,14 +32,6 @@ const IntroStyles = styled.div`
       list-style-type: lower-greek;
     }
     line-height: 25px;
-  }
-  .outerBorder {
-    padding: 10px;
-    margin: 10px;
-    border-radius: 20px;
-    background-color: ${props => props.theme.headerFooter}84;
-    border: 1px solid ${props => props.theme.textThree};
-    float: right;
   }
   #selfie {
     opacity: 0.6;

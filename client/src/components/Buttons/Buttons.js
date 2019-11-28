@@ -18,7 +18,7 @@ const AnimationStyles = styled.span`
     transform: rotateY(0);
   }
   .daynight-exit {
-    top: 0.7rem;
+    top: 0;
     left: 0.3rem;
     position: absolute;
     transform: rotateY(0);
@@ -31,7 +31,7 @@ const AnimationStyles = styled.span`
 const UnStyledButton = styled.button`
   margin: 0;
   position: absolute;
-  top: 0.7rem;
+  top: 0;
   left: 0.3rem;
   border: none;
   font: inherit;
