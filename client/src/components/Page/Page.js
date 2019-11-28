@@ -79,14 +79,12 @@ class Page extends Component {
         return null;
     }
   };
-  updateRefs = async refs => {
-    console.log(refs);
-    await this.setState({
+  updateRefs = refs => {
+    this.setState({
       home: refs.home,
       projects: refs.projects,
       contact: refs.contact
     });
-    console.log(this.state);
   };
   render() {
     const { start, theme, themeName, home, projects, contact } = this.state;

@@ -15,19 +15,6 @@ const Body = props => {
         return (
           <BodyStyles>
             <Route
-              exact
-              path={process.env.PUBLIC_URL + '/'}
-              render={props => {
-                return (
-                  <MainChannel
-                    navRefs={bodyProps.navRefs}
-                    theme={bodyProps.theme}
-                    {...props}
-                  />
-                );
-              }}
-            />
-            <Route
               path={process.env.PUBLIC_URL + '/projects'}
               exact
               render={props => {
@@ -55,6 +42,32 @@ const Body = props => {
             />
             <Route
               path={process.env.PUBLIC_URL + '/projects/:id'}
+              exact
+              render={props => {
+                return (
+                  <MainChannel
+                    navRefs={bodyProps.navRefs}
+                    theme={bodyProps.theme}
+                    {...props}
+                  />
+                );
+              }}
+            />
+            <Route
+              path={process.env.PUBLIC_URL + '/home'}
+              exact
+              render={props => {
+                return (
+                  <MainChannel
+                    navRefs={bodyProps.navRefs}
+                    theme={bodyProps.theme}
+                    {...props}
+                  />
+                );
+              }}
+            />
+            <Route
+              path={process.env.PUBLIC_URL + '/'}
               exact
               render={props => {
                 return (

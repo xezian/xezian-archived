@@ -22,7 +22,7 @@ const Nav = props => {
         <NavStyles>
           <div className="nav-opts">
             <div className="shim" />
-            <Link to="/">
+            <Link to="/home">
               <h4 ref={home}>Home</h4>
             </Link>
             <h4>/</h4>
