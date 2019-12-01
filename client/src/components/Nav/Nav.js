@@ -8,14 +8,10 @@ const Nav = props => {
   const home = useRef(null);
   const projects = useRef(null);
   const contact = useRef(null);
-  const refs = {
-    home,
-    projects,
-    contact
-  };
+  const { updateRefs } = props;
   useEffect(() => {
-    props.updateRefs(refs);
-  }, []);
+    updateRefs({ home, projects, contact });
+  }, [updateRefs]);
   return (
     <User {...props}>
       {({ data: { me } }) => (
