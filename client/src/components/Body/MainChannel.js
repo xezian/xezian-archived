@@ -65,9 +65,15 @@ const makeOrdersObj = (props, introRef, projectsRef, contactRef, projectId) => {
   };
 };
 
+const getParameterByName = name => {
+  const match = RegExp('[?&]' + name + '=([^&]*)').exec(window.location.search);
+  return match && decodeURIComponent(match[1].replace(/\+/g, ' '));
+};
+
 const locateAndAttainTarget = (targRef, targNav, nonNav1, nonNav2) => {
+  const vOff = getParameterByName('y') === null ? 0 : getParameterByName('y');
   window.scrollTo({
-    top: topOfWhat(targRef),
+    top: topOfWhat(targRef) + parseInt(vOff),
     behavior: 'auto'
   });
   targNav.current.style.color = 'pink';
@@ -183,25 +189,26 @@ const MainChannel = withRouter(props => {
     const vpTop = coords.y;
     const vpBot = coords.y + window.innerHeight + 30;
     const docBot = getDocHeight();
-    if (Math.abs(topOfWhat(whoSetWall) - vpTop) < 100) {
+    const vOff = getParameterByName('y') === null ? 0 : getParameterByName('y');
+    if (Math.abs(parseInt(vOff) + topOfWhat(whoSetWall) - vpTop) < 100) {
       setWall(false);
     }
     if (!wall) {
       if (vpBot >= docBot) {
         if (introTop > contactTop && introTop > projectsTop) {
-          history.push('/home');
+          history.push('/home?y=' + (vpTop - introTop).toString());
         } else if (projectsTop > introTop && projectsTop > contactTop) {
-          history.push('/projects');
+          history.push('/projects?y=' + (vpTop - projectsTop).toString());
         } else if (contactTop > projectsTop && contactTop > introTop) {
-          history.push('/contact');
+          history.push('/contact?y=' + (vpTop - contactTop).toString());
         }
       } else if (vpTop <= 0) {
         if (introTop < contactTop && introTop < projectsTop) {
-          history.push('/home');
+          history.push('/home?y=0');
         } else if (projectsTop < introTop && projectsTop < contactTop) {
-          history.push('/projects');
+          history.push('/projects?y=0');
         } else if (contactTop < projectsTop && contactTop < introTop) {
-          history.push('/contact');
+          history.push('/contact?y=0');
         }
       }
     }
