@@ -2,7 +2,7 @@ import gql from 'graphql-tag';
 
 const ALL_PROJECTS_QUERY = gql`
   query ALL_PROJECTS_QUERY {
-    projects(orderBy: sortorder_ASC) {
+    projects(first: 6, orderBy: sortorder_ASC) {
       id
       title
       link

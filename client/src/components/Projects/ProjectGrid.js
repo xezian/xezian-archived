@@ -31,8 +31,7 @@ export default class ProjectGrid extends Component {
         <p>
           Please explore some of the web based projects I've worked on over the
           past couple of years. It would be my pleasure to discuss any of these
-          with anyone interested. Check out my <a href="/contact">contact </a>
-          page.
+          with anyone interested.
         </p>
         <Query query={ALL_PROJECTS_QUERY}>
           {({ data, error, loading }) => {

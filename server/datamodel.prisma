@@ -1,11 +1,13 @@
 type User {
-  id: ID! @unique
+  id: ID! @id
   name: String! @unique
   password: String!
   secret: String!
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
 }
 type Project {
-  id: ID! @unique
+  id: ID! @id
   title: String!
   description: String!
   link: String!
@@ -17,9 +19,11 @@ type Project {
   img3: String
   image3: String
   sortorder: Int! @unique
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
 }
 type Guest {
-  id: ID! @unique
+  id: ID! @id
   name: String!
   email: String!
   amount: Int!
@@ -27,4 +31,6 @@ type Guest {
   meat: Int
   note: String
   misc: String
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
 }

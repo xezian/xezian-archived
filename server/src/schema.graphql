@@ -17,7 +17,7 @@ type Mutation {
 }
 
 type Query {
-    projects(where: ProjectWhereInput, orderBy: ProjectOrderByInput): [Project]!
+    projects(where: ProjectWhereInput, orderBy: ProjectOrderByInput, first: Int): [Project]!
     project(where: ProjectWhereUniqueInput!): Project
     me: User
     # jasonandariel.com
